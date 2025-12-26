@@ -1,0 +1,534 @@
+{
+  "instructors": [
+    {
+      "id": "inst-001",
+      "name": "Dr. Emily Richardson",
+      "title": "Lead LSAT Instructor",
+      "specialization": ["LSAT", "Logical Reasoning", "Test Strategy"],
+      "photo": "instructor_emily.jpg",
+      "education": [
+        {
+          "degree": "J.D.",
+          "institution": "Harvard Law School",
+          "year": "2015",
+          "honors": "Magna Cum Laude"
+        },
+        {
+          "degree": "Ph.D. in Education",
+          "institution": "Stanford University",
+          "year": "2018"
+        }
+      ],
+      "credentials": {
+        "lsatScore": 178,
+        "percentile": "99.9th",
+        "barAdmissions": ["New York", "California"],
+        "yearsTeaching": 8
+      },
+      "bio": "Dr. Emily Richardson is a leading LSAT instructor with over 8 years of experience helping students achieve their target scores. After scoring 178 on the LSAT and graduating magna cum laude from Harvard Law School, she dedicated her career to test preparation. She has helped over 2,000 students improve their scores, with an average increase of 15 points.",
+      "expertise": [
+        "LSAT Logical Reasoning mastery",
+        "Advanced test-taking strategies",
+        "Personalized study plan development",
+        "Score improvement techniques",
+        "Law school application consulting"
+      ],
+      "achievements": [
+        "Developed proprietary LSAT study methodology",
+        "Published author of 'Mastering the LSAT'",
+        "Featured speaker at national pre-law conferences",
+        "99.9th percentile LSAT score (178/180)",
+        "Helped 500+ students score 170+"
+      ],
+      "teachingStyle": "Dr. Richardson combines rigorous academic training with practical test-taking strategies. Her teaching philosophy emphasizes understanding over memorization, helping students develop critical thinking skills that extend beyond the LSAT.",
+      "availability": ["Monday", "Tuesday", "Wednesday", "Thursday"],
+      "languages": ["English", "Spanish"],
+      "rating": 4.9,
+      "totalReviews": 342,
+      "totalStudents": 2156,
+      "coursesTaught": ["lsat-prep-comprehensive", "lsat-prep-intensive", "law-school-prep"],
+      "videoIntroUrl": "intro_emily.mp4",
+      "socialLinks": {
+        "linkedin": "https://linkedin.com/in/emily-richardson",
+        "twitter": "https://twitter.com/emilyLSAT"
+      }
+    },
+    {
+      "id": "inst-002",
+      "name": "Professor Michael Chen",
+      "title": "Senior LSAT Logic Games Specialist",
+      "specialization": ["LSAT", "Logic Games", "Analytical Reasoning"],
+      "photo": "instructor_michael.jpg",
+      "education": [
+        {
+          "degree": "J.D.",
+          "institution": "Yale Law School",
+          "year": "2012",
+          "honors": "Order of the Coif"
+        },
+        {
+          "degree": "B.A. in Philosophy",
+          "institution": "Princeton University",
+          "year": "2009",
+          "honors": "Summa Cum Laude"
+        }
+      ],
+      "credentials": {
+        "lsatScore": 180,
+        "percentile": "99.9th",
+        "barAdmissions": ["Connecticut", "New York"],
+        "yearsTeaching": 10
+      },
+      "bio": "Professor Chen is renowned for his innovative approach to LSAT Logic Games. With a perfect 180 LSAT score and a background in philosophy, he brings unique analytical skills to his teaching. His students consistently achieve perfect or near-perfect scores on the Logic Games section.",
+      "expertise": [
+        "LSAT Logic Games perfection",
+        "Diagramming techniques",
+        "Pattern recognition strategies",
+        "Speed and accuracy optimization",
+        "Complex game type mastery"
+      ],
+      "achievements": [
+        "Perfect 180 LSAT score",
+        "Created 'Chen Method' for Logic Games",
+        "Trained over 3,000 students",
+        "Author of 'Logic Games Decoded'",
+        "Average student improvement: -3 questions to -0 questions"
+      ],
+      "teachingStyle": "Professor Chen's teaching style is methodical and systematic. He breaks down complex logic games into manageable components, teaching students to see patterns and develop efficient diagramming strategies that save time and increase accuracy.",
+      "availability": ["Monday", "Wednesday", "Friday", "Saturday"],
+      "languages": ["English", "Mandarin"],
+      "rating": 5.0,
+      "totalReviews": 298,
+      "totalStudents": 3012,
+      "coursesTaught": ["lsat-prep-comprehensive", "lsat-prep-intensive", "law-school-prep"],
+      "videoIntroUrl": "intro_michael.mp4",
+      "socialLinks": {
+        "linkedin": "https://linkedin.com/in/michael-chen-lsat",
+        "website": "https://chenmethodlsat.com"
+      }
+    },
+    {
+      "id": "inst-003",
+      "name": "Sarah Martinez, J.D.",
+      "title": "LSAT Reading Comprehension Expert",
+      "specialization": ["LSAT", "Reading Comprehension", "Critical Reading"],
+      "photo": "instructor_sarah.jpg",
+      "education": [
+        {
+          "degree": "J.D.",
+          "institution": "Columbia Law School",
+          "year": "2014",
+          "honors": "James Kent Scholar"
+        },
+        {
+          "degree": "M.A. in English Literature",
+          "institution": "University of Chicago",
+          "year": "2011"
+        }
+      ],
+      "credentials": {
+        "lsatScore": 176,
+        "percentile": "99.5th",
+        "barAdmissions": ["New York", "Illinois"],
+        "yearsTeaching": 9
+      },
+      "bio": "Sarah Martinez specializes in LSAT Reading Comprehension, bringing her extensive background in English literature to help students master complex passages. Her unique approach combines close reading techniques with efficient time management strategies, resulting in significant score improvements for her students.",
+      "expertise": [
+        "LSAT Reading Comprehension strategies",
+        "Active reading techniques",
+        "Comparative passage mastery",
+        "Time management optimization",
+        "Inference and main point questions"
+      ],
+      "achievements": [
+        "99.5th percentile LSAT score (176/180)",
+        "Developed 'Active Annotation Method'",
+        "Taught over 1,500 students",
+        "Published research on legal reading strategies",
+        "Average RC section improvement: +4 points"
+      ],
+      "teachingStyle": "Sarah's teaching approach focuses on developing active reading skills that allow students to engage deeply with passages while maintaining efficient pacing. She emphasizes understanding passage structure and anticipating question types.",
+      "availability": ["Tuesday", "Thursday", "Friday", "Sunday"],
+      "languages": ["English", "Spanish", "Portuguese"],
+      "rating": 4.9,
+      "totalReviews": 276,
+      "totalStudents": 1678,
+      "coursesTaught": ["lsat-prep-intensive", "law-school-prep"],
+      "videoIntroUrl": "intro_sarah.mp4",
+      "socialLinks": {
+        "linkedin": "https://linkedin.com/in/sarahmartinez-lsat",
+        "instagram": "https://instagram.com/lsat_with_sarah"
+      }
+    },
+    {
+      "id": "inst-004",
+      "name": "Dr. James Anderson",
+      "title": "LNAT Master Instructor",
+      "specialization": ["LNAT", "Critical Thinking", "UK Law Admissions"],
+      "photo": "instructor_james.jpg",
+      "education": [
+        {
+          "degree": "Ph.D. in Law",
+          "institution": "University of Oxford",
+          "year": "2016"
+        },
+        {
+          "degree": "B.A. in Law",
+          "institution": "University of Cambridge",
+          "year": "2010",
+          "honors": "First Class Honours"
+        }
+      ],
+      "credentials": {
+        "lnatScore": 42,
+        "percentile": "95th",
+        "qualifications": ["Barrister (England & Wales)", "Solicitor"],
+        "yearsTeaching": 11
+      },
+      "bio": "Dr. James Anderson is a leading LNAT expert with extensive experience in UK law school admissions. Having studied at both Oxford and Cambridge, he brings insider knowledge of what top UK law schools look for in candidates. He has successfully coached over 1,000 students through the LNAT and application process.",
+      "expertise": [
+        "LNAT Section A & B mastery",
+        "UK law school admissions strategy",
+        "Critical thinking development",
+        "Essay writing excellence",
+        "UCAS application guidance"
+      ],
+      "achievements": [
+        "95th percentile LNAT score",
+        "Former Oxford admissions tutor",
+        "Author of 'The LNAT Success Guide'",
+        "Trained 1,000+ successful applicants",
+        "Featured in Times Higher Education"
+      ],
+      "teachingStyle": "Dr. Anderson's teaching methodology is rooted in the tutorial system of Oxford and Cambridge. He emphasizes Socratic dialogue, encouraging students to think critically and articulate complex arguments clearly and persuasively.",
+      "availability": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+      "languages": ["English", "French", "German"],
+      "rating": 4.9,
+      "totalReviews": 412,
+      "totalStudents": 1876,
+      "coursesTaught": ["lnat-prep-comprehensive", "law-school-prep"],
+      "videoIntroUrl": "intro_james.mp4",
+      "socialLinks": {
+        "linkedin": "https://linkedin.com/in/drjamesanderson",
+        "website": "https://lnatsuccess.co.uk"
+      }
+    },
+    {
+      "id": "inst-005",
+      "name": "Dr. Olivia Thompson",
+      "title": "LNAT Essay Writing Specialist",
+      "specialization": ["LNAT", "Essay Writing", "Legal Argumentation"],
+      "photo": "instructor_olivia.jpg",
+      "education": [
+        {
+          "degree": "D.Phil. in Law",
+          "institution": "University of Oxford",
+          "year": "2015"
+        },
+        {
+          "degree": "B.C.L.",
+          "institution": "University of Oxford",
+          "year": "2011"
+        },
+        {
+          "degree": "LL.B.",
+          "institution": "London School of Economics",
+          "year": "2010",
+          "honors": "First Class Honours"
+        }
+      ],
+      "credentials": {
+        "lnatScore": 40,
+        "percentile": "92nd",
+        "qualifications": ["Solicitor (England & Wales)"],
+        "yearsTeaching": 9
+      },
+      "bio": "Dr. Olivia Thompson specializes in LNAT Section B essay writing and has helped hundreds of students craft compelling, high-scoring essays. With a doctorate from Oxford and extensive legal writing experience, she teaches students to develop sophisticated arguments and write with clarity and persuasion under time pressure.",
+      "expertise": [
+        "LNAT Section B essay excellence",
+        "Legal argumentation techniques",
+        "Academic writing style",
+        "Persuasive writing strategies",
+        "Time-pressured writing skills"
+      ],
+      "achievements": [
+        "Published author of legal scholarship",
+        "Developed 'Thompson Essay Framework'",
+        "Trained 800+ students in essay writing",
+        "Former LSE teaching fellow",
+        "Average student essay improvement: 15+ marks"
+      ],
+      "teachingStyle": "Dr. Thompson's approach focuses on structure, clarity, and persuasion. She teaches students to develop a clear thesis, build well-supported arguments, and write with sophistication while maintaining the pacing necessary for timed essays.",
+      "availability": ["Tuesday", "Wednesday", "Thursday", "Saturday"],
+      "languages": ["English", "Italian"],
+      "rating": 5.0,
+      "totalReviews": 234,
+      "totalStudents": 934,
+      "coursesTaught": ["lnat-prep-comprehensive", "lnat-essay-mastery", "law-school-prep"],
+      "videoIntroUrl": "intro_olivia.mp4",
+      "socialLinks": {
+        "linkedin": "https://linkedin.com/in/oliviathompson-law",
+        "twitter": "https://twitter.com/oliviaLNAT"
+      }
+    },
+    {
+      "id": "inst-006",
+      "name": "Professor David Williams",
+      "title": "Legal Writing & Skills Instructor",
+      "specialization": ["Legal Writing", "Legal Analysis", "Research Skills"],
+      "photo": "instructor_david.jpg",
+      "education": [
+        {
+          "degree": "J.D.",
+          "institution": "University of Michigan Law School",
+          "year": "2008",
+          "honors": "Order of the Coif"
+        },
+        {
+          "degree": "LL.M.",
+          "institution": "Harvard Law School",
+          "year": "2009"
+        }
+      ],
+      "credentials": {
+        "barAdmissions": ["Michigan", "Massachusetts", "Federal Courts"],
+        "yearsTeaching": 14,
+        "publications": 15
+      },
+      "bio": "Professor Williams brings over 14 years of legal writing instruction to our program. As a former law review editor and published legal scholar, he teaches students the fundamental skills needed to excel in law school and legal practice. His systematic approach to legal analysis and writing has helped thousands of students succeed.",
+      "expertise": [
+        "Legal writing fundamentals",
+        "Case briefing and analysis",
+        "IRAC methodology",
+        "Legal research techniques",
+        "Bluebook citation",
+        "Memorandum and brief writing"
+      ],
+      "achievements": [
+        "15+ published legal articles",
+        "Former Harvard Law Review editor",
+        "Award-winning legal writing professor",
+        "Trained 2,500+ pre-law students",
+        "Created comprehensive legal writing curriculum"
+      ],
+      "teachingStyle": "Professor Williams emphasizes precision, clarity, and analytical rigor. His teaching method breaks down complex legal concepts into understandable components, helping students develop strong foundational skills that will serve them throughout their legal careers.",
+      "availability": ["Monday", "Wednesday", "Friday"],
+      "languages": ["English"],
+      "rating": 4.8,
+      "totalReviews": 389,
+      "totalStudents": 2567,
+      "coursesTaught": ["legal-writing-foundation", "lnat-essay-mastery"],
+      "videoIntroUrl": "intro_david.mp4",
+      "socialLinks": {
+        "linkedin": "https://linkedin.com/in/prof-david-williams"
+      }
+    },
+    {
+      "id": "inst-007",
+      "name": "Jennifer Park, J.D.",
+      "title": "Law School Admissions Counselor",
+      "specialization": ["Admissions Consulting", "Personal Statements", "Interview Prep"],
+      "photo": "instructor_jennifer.jpg",
+      "education": [
+        {
+          "degree": "J.D.",
+          "institution": "Northwestern Pritzker School of Law",
+          "year": "2013"
+        },
+        {
+          "degree": "M.Ed. in Counseling",
+          "institution": "Boston University",
+          "year": "2016"
+        }
+      ],
+      "credentials": {
+        "barAdmissions": ["Illinois", "New York"],
+        "yearsTeaching": 10,
+        "admissionsCounseling": "Certified"
+      },
+      "bio": "Jennifer Park is a dedicated law school admissions counselor with a unique combination of legal and counseling expertise. She has guided over 1,000 students through the law school application process, helping them gain admission to top-tier programs. Her holistic approach considers each student's unique strengths and goals.",
+      "expertise": [
+        "Law school admissions strategy",
+        "Personal statement development",
+        "Application review and editing",
+        "Interview preparation",
+        "School selection guidance",
+        "Scholarship negotiation",
+        "Career path counseling"
+      ],
+      "achievements": [
+        "1,000+ successful applicants counseled",
+        "95% admission rate to target schools",
+        "Former law school admissions reader",
+        "Published admissions guide author",
+        "$2M+ in scholarships secured for students"
+      ],
+      "teachingStyle": "Jennifer's counseling approach is personalized and student-centered. She works closely with each student to identify their unique story and present it compellingly to admissions committees. Her supportive yet honest feedback helps students craft authentic, powerful applications.",
+      "availability": ["Tuesday", "Thursday", "Friday", "Saturday", "Sunday"],
+      "languages": ["English", "Korean"],
+      "rating": 5.0,
+      "totalReviews": 456,
+      "totalStudents": 1234,
+      "coursesTaught": ["law-school-prep", "legal-writing-foundation"],
+      "videoIntroUrl": "intro_jennifer.mp4",
+      "socialLinks": {
+        "linkedin": "https://linkedin.com/in/jennifer-park-jd",
+        "instagram": "https://instagram.com/lawschool_with_jen"
+      }
+    },
+    {
+      "id": "inst-008",
+      "name": "Robert Zhang, J.D.",
+      "title": "LSAT Tutor & Strategy Coach",
+      "specialization": ["LSAT", "Study Planning", "Performance Psychology"],
+      "photo": "instructor_robert.jpg",
+      "education": [
+        {
+          "degree": "J.D.",
+          "institution": "University of Pennsylvania Law School",
+          "year": "2016"
+        },
+        {
+          "degree": "B.S. in Cognitive Science",
+          "institution": "MIT",
+          "year": "2013"
+        }
+      ],
+      "credentials": {
+        "lsatScore": 175,
+        "percentile": "99.2nd",
+        "barAdmissions": ["Pennsylvania", "New Jersey"],
+        "yearsTeaching": 7
+      },
+      "bio": "Robert Zhang combines his background in cognitive science with LSAT expertise to help students optimize their test performance. His approach focuses on understanding how people learn and retain information, creating personalized study plans that maximize efficiency and effectiveness.",
+      "expertise": [
+        "Personalized study plan design",
+        "Learning optimization strategies",
+        "Test anxiety management",
+        "Performance psychology",
+        "All LSAT sections"
+      ],
+      "achievements": [
+        "99.2nd percentile LSAT score (175/180)",
+        "Developed adaptive learning methodology",
+        "Trained 600+ students",
+        "Average score improvement: +13 points",
+        "Published articles on test-taking psychology"
+      ],
+      "teachingStyle": "Robert's teaching style is scientific and data-driven. He uses diagnostic assessments and analytics to identify each student's strengths and weaknesses, then creates customized learning paths that maximize improvement in minimum time.",
+      "availability": ["Monday", "Tuesday", "Thursday", "Saturday"],
+      "languages": ["English", "Mandarin"],
+      "rating": 4.9,
+      "totalReviews": 187,
+      "totalStudents": 645,
+      "coursesTaught": ["lsat-prep-comprehensive", "lsat-prep-intensive"],
+      "videoIntroUrl": "intro_robert.mp4",
+      "socialLinks": {
+        "linkedin": "https://linkedin.com/in/robert-zhang-lsat"
+      }
+    },
+    {
+      "id": "inst-009",
+      "name": "Dr. Amelia Foster",
+      "title": "LNAT Critical Thinking Specialist",
+      "specialization": ["LNAT", "Critical Thinking", "Philosophy"],
+      "photo": "instructor_amelia.jpg",
+      "education": [
+        {
+          "degree": "Ph.D. in Philosophy",
+          "institution": "King's College London",
+          "year": "2014"
+        },
+        {
+          "degree": "B.A. in Philosophy & Law",
+          "institution": "University of Bristol",
+          "year": "2009",
+          "honors": "First Class Honours"
+        }
+      ],
+      "credentials": {
+        "lnatScore": 41,
+        "percentile": "94th",
+        "yearsTeaching": 10
+      },
+      "bio": "Dr. Amelia Foster brings her extensive philosophy background to LNAT preparation, helping students develop the critical thinking skills essential for success. Her approach goes beyond test preparation, teaching students to analyze arguments, identify assumptions, and think logically—skills that will serve them throughout law school and their legal careers.",
+      "expertise": [
+        "Critical thinking development",
+        "Argument analysis",
+        "Logical reasoning",
+        "LNAT Section A mastery",
+        "Philosophical approaches to law"
+      ],
+      "achievements": [
+        "94th percentile LNAT score",
+        "Published philosopher",
+        "Trained 700+ students",
+        "Developed critical thinking curriculum",
+        "Lecturer at King's College London"
+      ],
+      "teachingStyle": "Dr. Foster's teaching is rooted in the Socratic method, encouraging students to question assumptions and think deeply about arguments. She creates a challenging yet supportive environment where students develop genuine analytical skills.",
+      "availability": ["Monday", "Wednesday", "Friday"],
+      "languages": ["English", "French"],
+      "rating": 4.8,
+      "totalReviews": 203,
+      "totalStudents": 812,
+      "coursesTaught": ["lnat-prep-comprehensive"],
+      "videoIntroUrl": "intro_amelia.mp4",
+      "socialLinks": {
+        "linkedin": "https://linkedin.com/in/dr-amelia-foster",
+        "website": "https://ameliafoster.com"
+      }
+    },
+    {
+      "id": "inst-010",
+      "name": "Marcus Johnson, J.D.",
+      "title": "Diversity & Inclusion Admissions Advisor",
+      "specialization": ["Admissions Consulting", "Diversity Advocacy", "Scholarship Strategy"],
+      "photo": "instructor_marcus.jpg",
+      "education": [
+        {
+          "degree": "J.D.",
+          "institution": "Howard University School of Law",
+          "year": "2011"
+        },
+        {
+          "degree": "B.A. in Political Science",
+          "institution": "Morehouse College",
+          "year": "2008"
+        }
+      ],
+      "credentials": {
+        "barAdmissions": ["District of Columbia", "Maryland", "Virginia"],
+        "yearsTeaching": 12,
+        "diversityAdvocate": "Certified"
+      },
+      "bio": "Marcus Johnson is passionate about increasing diversity in the legal profession. He specializes in helping underrepresented students navigate the law school application process, secure scholarships, and find programs that align with their values and career goals. His guidance has helped hundreds of diverse students achieve their law school dreams.",
+      "expertise": [
+        "Diversity-focused admissions strategy",
+        "Scholarship identification and application",
+        "Personal statement development",
+        "HBCU and minority-serving institution guidance",
+        "Public interest law career counseling"
+      ],
+      "achievements": [
+        "Helped 500+ diverse students gain admission",
+        "$3M+ in scholarships secured",
+        "Former HBCU law school recruiter",
+        "Published advocate for legal education access",
+        "Founder of nonprofit pre-law mentorship program"
+      ],
+      "teachingStyle": "Marcus provides mentorship that extends beyond test prep and applications. He helps students understand their unique value, develop authentic narratives, and identify opportunities that will support their long-term career goals in law.",
+      "availability": ["Tuesday", "Wednesday", "Thursday", "Saturday"],
+      "languages": ["English"],
+      "rating": 5.0,
+      "totalReviews": 267,
+      "totalStudents": 589,
+      "coursesTaught": ["law-school-prep"],
+      "videoIntroUrl": "intro_marcus.mp4",
+      "socialLinks": {
+        "linkedin": "https://linkedin.com/in/marcus-johnson-jd",
+        "twitter": "https://twitter.com/marcuslawaccess"
+      }
+    }
+  ]
+}

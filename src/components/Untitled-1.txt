@@ -1,0 +1,1 @@
+git add frontend && git commit -m "Update instructor card to display local images and improve image handling"

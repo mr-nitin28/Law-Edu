@@ -1,0 +1,526 @@
+{
+  "courses": [
+    {
+      "id": "lsat-prep-comprehensive",
+      "title": "LSAT Preparation Course - Comprehensive",
+      "subtitle": "Master the Law School Admission Test",
+      "description": "Comprehensive preparation for the LSAT with expert instructors from top law schools. Our proven methodology has helped thousands achieve their target scores.",
+      "longDescription": "Our LSAT Preparation Course is designed to give you every advantage on test day. With comprehensive instruction, you'll master every section of the LSAT through our proven teaching methodology. We guide you through logical reasoning, analytical reasoning (logic games), and reading comprehension with personalized attention and feedback. This course includes 15+ full-length practice tests, weekly one-on-one tutoring sessions, and access to our exclusive online learning platform with 1000+ practice questions.",
+      "price": 599,
+      "originalPrice": 799,
+      "duration": "12 weeks",
+      "format": ["Online", "In-Person"],
+      "level": "All Levels",
+      "rating": 4.9,
+      "totalStudents": 3254,
+      "totalReviews": 892,
+      "image": "lsat_course.jpg",
+      "category": "LSAT",
+      "featured": true,
+      "instructorIds": ["inst-001", "inst-002"],
+      "highlights": [
+        "Comprehensive coverage of all LSAT sections",
+        "15+ full-length practice tests with detailed explanations",
+        "Expert tutors with 99th percentile scores",
+        "Personalized study plans tailored to your needs",
+        "Score improvement guarantee or your money back",
+        "Flexible online and in-person options",
+        "Access to exclusive study materials and resources",
+        "Weekly live Q&A sessions with instructors"
+      ],
+      "curriculum": [
+        {
+          "week": 1,
+          "title": "LSAT Overview & Diagnostic",
+          "topics": ["Test structure and format", "Timing strategies", "Diagnostic assessment", "Setting realistic goals"],
+          "materials": ["Diagnostic test", "Study guide PDF", "Video lectures"]
+        },
+        {
+          "week": 2,
+          "title": "Logical Reasoning Fundamentals",
+          "topics": ["Argument structure", "Question types", "Common fallacies", "Assumption questions"],
+          "materials": ["Practice questions", "Video tutorials", "Interactive exercises"]
+        },
+        {
+          "week": 3,
+          "title": "Advanced Logical Reasoning",
+          "topics": ["Strengthen/Weaken questions", "Flaw questions", "Parallel reasoning", "Method of reasoning"],
+          "materials": ["Advanced practice set", "Strategy guide", "Mock section"]
+        },
+        {
+          "week": 4,
+          "title": "Logic Games Introduction",
+          "topics": ["Game types overview", "Diagramming basics", "Basic deductions", "Ordering games"],
+          "materials": ["Logic games workbook", "Video demonstrations", "Practice drills"]
+        },
+        {
+          "week": 5,
+          "title": "Advanced Logic Games",
+          "topics": ["Grouping games", "Hybrid games", "Advanced diagramming", "Time-saving techniques"],
+          "materials": ["Advanced games set", "Strategy video", "Timed practice"]
+        },
+        {
+          "week": 6,
+          "title": "Reading Comprehension Strategies",
+          "topics": ["Active reading techniques", "Passage types", "Question strategies", "Time management"],
+          "materials": ["Reading passages", "Annotation guide", "Practice test"]
+        },
+        {
+          "week": 7,
+          "title": "Advanced Reading Comprehension",
+          "topics": ["Comparative passages", "Complex arguments", "Inference questions", "Main point identification"],
+          "materials": ["Advanced passages", "Video analysis", "Mock section"]
+        },
+        {
+          "week": 8,
+          "title": "Integrated Practice - Part 1",
+          "topics": ["Full-length practice test", "Performance analysis", "Weakness identification", "Strategy refinement"],
+          "materials": ["Full practice test", "Score report", "Personalized feedback"]
+        },
+        {
+          "week": 9,
+          "title": "Test-Taking Strategies",
+          "topics": ["Stress management", "Pacing strategies", "Guessing techniques", "Test day preparation"],
+          "materials": ["Strategy handbook", "Meditation exercises", "Checklist"]
+        },
+        {
+          "week": 10,
+          "title": "Integrated Practice - Part 2",
+          "topics": ["Second full-length test", "Comparative analysis", "Final adjustments", "Confidence building"],
+          "materials": ["Practice test 2", "Progress report", "Video review"]
+        },
+        {
+          "week": 11,
+          "title": "Final Review & Polish",
+          "topics": ["Reviewing all sections", "Common mistakes", "Last-minute tips", "Mental preparation"],
+          "materials": ["Review materials", "Quick reference guide", "Motivational content"]
+        },
+        {
+          "week": 12,
+          "title": "Mock Test & Final Preparation",
+          "topics": ["Final mock exam", "Score prediction", "Test day logistics", "Post-test strategy"],
+          "materials": ["Final mock test", "Test day guide", "Application timeline"]
+        }
+      ],
+      "requirements": [
+        "Basic understanding of English",
+        "Commitment to 10-15 hours per week",
+        "Computer with internet access",
+        "Quiet study space"
+      ],
+      "outcomes": [
+        "Achieve significant score improvement (average +12 points)",
+        "Master all LSAT section types",
+        "Develop effective time management skills",
+        "Build confidence for test day",
+        "Receive personalized application guidance"
+      ]
+    },
+    {
+      "id": "lsat-prep-intensive",
+      "title": "LSAT Intensive Bootcamp",
+      "subtitle": "Fast-Track Your LSAT Success",
+      "description": "Accelerated 6-week intensive program for students who need rapid improvement. Perfect for those with limited preparation time.",
+      "longDescription": "Our LSAT Intensive Bootcamp is designed for highly motivated students who need to maximize their preparation in a shorter timeframe. This accelerated program covers all essential LSAT concepts with daily practice sessions, intensive tutoring, and rapid-fire drills. With small class sizes and personalized attention, you'll make significant progress in just 6 weeks.",
+      "price": 899,
+      "originalPrice": 1199,
+      "duration": "6 weeks",
+      "format": ["Online Live"],
+      "level": "Intermediate to Advanced",
+      "rating": 4.8,
+      "totalStudents": 1567,
+      "totalReviews": 423,
+      "image": "lsat_intensive.jpg",
+      "category": "LSAT",
+      "featured": true,
+      "instructorIds": ["inst-001", "inst-003"],
+      "highlights": [
+        "Accelerated 6-week program",
+        "Daily live sessions (2 hours per day)",
+        "10 full-length practice tests",
+        "Small group sessions (max 10 students)",
+        "Priority access to instructors",
+        "Rapid score improvement techniques",
+        "Intensive drilling and practice"
+      ],
+      "curriculum": [
+        {
+          "week": 1,
+          "title": "Rapid Assessment & Logical Reasoning",
+          "topics": ["Diagnostic evaluation", "LR fundamentals", "Argument types", "Quick strategies"],
+          "materials": ["Intensive workbook", "Daily drills", "2 practice tests"]
+        },
+        {
+          "week": 2,
+          "title": "Logic Games Mastery",
+          "topics": ["All game types", "Advanced diagramming", "Speed techniques", "Pattern recognition"],
+          "materials": ["Games manual", "Video library", "Daily timed sections"]
+        },
+        {
+          "week": 3,
+          "title": "Reading Comprehension Excellence",
+          "topics": ["Speed reading", "Passage structures", "Question prediction", "Elimination strategies"],
+          "materials": ["RC anthology", "Practice passages", "2 practice tests"]
+        },
+        {
+          "week": 4,
+          "title": "Integration & Refinement",
+          "topics": ["Full-section practice", "Cross-section strategies", "Time optimization", "Error pattern analysis"],
+          "materials": ["Integration guide", "Mixed practice", "2 practice tests"]
+        },
+        {
+          "week": 5,
+          "title": "Advanced Techniques & Polish",
+          "topics": ["High-difficulty questions", "Advanced strategies", "Test psychology", "Performance optimization"],
+          "materials": ["Advanced manual", "Elite questions", "2 practice tests"]
+        },
+        {
+          "week": 6,
+          "title": "Final Push & Test Simulation",
+          "topics": ["Test simulation", "Final review", "Mental preparation", "Score maximization"],
+          "materials": ["Final materials", "Simulation tests", "Test day kit"]
+        }
+      ],
+      "requirements": [
+        "Previous LSAT diagnostic score",
+        "20-25 hours per week commitment",
+        "Strong motivation and discipline",
+        "Reliable internet connection"
+      ],
+      "outcomes": [
+        "Average improvement of 10-15 points",
+        "Complete LSAT mastery in 6 weeks",
+        "Test-ready confidence",
+        "Strategic approach to every question type"
+      ]
+    },
+    {
+      "id": "lnat-prep-comprehensive",
+      "title": "LNAT Preparation Course - Complete",
+      "subtitle": "Excel in the Law National Admissions Test",
+      "description": "Specialized coaching for the LNAT with focus on critical thinking, essay writing, and multiple-choice mastery for UK law school admissions.",
+      "longDescription": "The LNAT Preparation Course is specifically designed for students applying to top UK law schools. Our comprehensive program covers both sections of the test with intensive practice and personalized feedback. You'll develop critical thinking skills, master essay writing techniques, and learn to tackle complex multiple-choice questions efficiently. Our instructors are experienced UK law school graduates who understand exactly what admissions committees are looking for.",
+      "price": 549,
+      "originalPrice": 699,
+      "duration": "10 weeks",
+      "format": ["Online", "Hybrid"],
+      "level": "All Levels",
+      "rating": 4.8,
+      "totalStudents": 2103,
+      "totalReviews": 567,
+      "image": "lnat_course.jpg",
+      "category": "LNAT",
+      "featured": true,
+      "instructorIds": ["inst-004", "inst-005"],
+      "highlights": [
+        "Section A: Multiple choice mastery",
+        "Section B: Essay writing excellence",
+        "Critical thinking development",
+        "UK law school admission guidance",
+        "12 mock exams with detailed feedback",
+        "One-on-one mentoring sessions",
+        "Application strategy support",
+        "UCAS personal statement review"
+      ],
+      "curriculum": [
+        {
+          "week": 1,
+          "title": "LNAT Introduction & Foundation",
+          "topics": ["Test format and structure", "Scoring system explained", "Time management basics", "UK law school overview"],
+          "materials": ["Welcome pack", "Diagnostic test", "Study guide"]
+        },
+        {
+          "week": 2,
+          "title": "Critical Thinking Skills - Part 1",
+          "topics": ["Argument analysis", "Logical reasoning", "Assumption identification", "Inference drawing"],
+          "materials": ["Critical thinking workbook", "Practice passages", "Video tutorials"]
+        },
+        {
+          "week": 3,
+          "title": "Critical Thinking Skills - Part 2",
+          "topics": ["Evaluating evidence", "Identifying flaws", "Comparing arguments", "Advanced reasoning"],
+          "materials": ["Advanced exercises", "Timed practice", "Mock section A"]
+        },
+        {
+          "week": 4,
+          "title": "Section A Mastery",
+          "topics": ["Question types breakdown", "Speed reading techniques", "Elimination strategies", "Pattern recognition"],
+          "materials": ["Section A guide", "Practice tests", "Strategy videos"]
+        },
+        {
+          "week": 5,
+          "title": "Essay Writing Fundamentals",
+          "topics": ["Essay structure", "Thesis development", "Argumentation techniques", "Planning strategies"],
+          "materials": ["Essay handbook", "Sample essays", "Writing templates"]
+        },
+        {
+          "week": 6,
+          "title": "Advanced Essay Techniques",
+          "topics": ["Sophisticated arguments", "Counter-arguments", "Style and tone", "Legal writing conventions"],
+          "materials": ["Advanced essay guide", "Model answers", "Peer review"]
+        },
+        {
+          "week": 7,
+          "title": "Section B Excellence",
+          "topics": ["Time management for essays", "Topic analysis", "Quick planning", "Effective conclusions"],
+          "materials": ["Essay practice prompts", "Feedback sessions", "Writing drills"]
+        },
+        {
+          "week": 8,
+          "title": "Integrated Practice",
+          "topics": ["Full mock LNAT", "Performance review", "Personalized feedback", "Strategy refinement"],
+          "materials": ["Full mock exam", "Detailed report", "Improvement plan"]
+        },
+        {
+          "week": 9,
+          "title": "Application Strategy",
+          "topics": ["UCAS personal statements", "University selection", "Interview preparation", "Timeline planning"],
+          "materials": ["Application guide", "PS examples", "Interview prep"]
+        },
+        {
+          "week": 10,
+          "title": "Final Preparation",
+          "topics": ["Final mock exam", "Last-minute tips", "Test day preparation", "Mental readiness"],
+          "materials": ["Final resources", "Test day checklist", "Confidence building"]
+        }
+      ],
+      "requirements": [
+        "Strong English language skills",
+        "Interest in UK law schools",
+        "8-12 hours per week commitment",
+        "Computer with stable internet"
+      ],
+      "outcomes": [
+        "Score in the top 25% of LNAT test-takers",
+        "Write compelling essays under time pressure",
+        "Develop advanced critical thinking skills",
+        "Receive comprehensive application guidance",
+        "Gain confidence for UK law school admissions"
+      ]
+    },
+    {
+      "id": "lnat-essay-mastery",
+      "title": "LNAT Essay Writing Masterclass",
+      "subtitle": "Perfect Your Section B Essays",
+      "description": "Focused course on LNAT Section B essay writing with personalized feedback from experienced tutors. Master the art of persuasive legal argumentation.",
+      "longDescription": "This specialized course focuses exclusively on LNAT Section B essay writing. Through intensive practice, personalized feedback, and expert guidance, you'll learn to craft compelling, well-structured essays that impress admissions committees. Our instructors provide detailed feedback on every essay you write, helping you develop a sophisticated writing style and strong argumentative skills.",
+      "price": 299,
+      "originalPrice": 399,
+      "duration": "4 weeks",
+      "format": ["Online"],
+      "level": "All Levels",
+      "rating": 4.9,
+      "totalStudents": 856,
+      "totalReviews": 234,
+      "image": "lnat_essay.jpg",
+      "category": "LNAT",
+      "featured": false,
+      "instructorIds": ["inst-005", "inst-006"],
+      "highlights": [
+        "Focus on Section B essays only",
+        "Write 20+ practice essays",
+        "Detailed feedback on every essay",
+        "Weekly one-on-one sessions",
+        "Legal argumentation techniques",
+        "Time management strategies",
+        "Access to 100+ sample essays"
+      ],
+      "curriculum": [
+        {
+          "week": 1,
+          "title": "Essay Fundamentals",
+          "topics": ["Structure and organization", "Thesis statements", "Introduction techniques", "Body paragraphs"],
+          "materials": ["Essay handbook", "5 practice prompts", "Sample essays"]
+        },
+        {
+          "week": 2,
+          "title": "Argumentation & Evidence",
+          "topics": ["Building arguments", "Using evidence", "Counter-arguments", "Logical flow"],
+          "materials": ["Argumentation guide", "5 practice prompts", "Feedback sessions"]
+        },
+        {
+          "week": 3,
+          "title": "Style & Sophistication",
+          "topics": ["Academic tone", "Vocabulary enhancement", "Sentence variety", "Persuasive techniques"],
+          "materials": ["Style guide", "5 practice prompts", "Editing workshop"]
+        },
+        {
+          "week": 4,
+          "title": "Timed Practice & Refinement",
+          "topics": ["Speed writing", "Planning under pressure", "Final polish", "Common pitfalls"],
+          "materials": ["Timed exercises", "5 practice prompts", "Final review"]
+        }
+      ],
+      "requirements": [
+        "Basic understanding of LNAT format",
+        "Commitment to weekly essay writing",
+        "Willingness to receive constructive feedback"
+      ],
+      "outcomes": [
+        "Write high-quality essays in 40 minutes",
+        "Develop a sophisticated writing style",
+        "Master argumentative techniques",
+        "Receive personalized improvement strategies"
+      ]
+    },
+    {
+      "id": "law-school-prep",
+      "title": "Complete Law School Application Package",
+      "subtitle": "End-to-End Admissions Support",
+      "description": "Comprehensive guidance for your entire law school application process, from test prep to personal statements and interview coaching.",
+      "longDescription": "Our Complete Law School Application Package provides end-to-end support for your law school journey. This all-inclusive program covers LSAT/LNAT preparation, personal statement development, school selection strategy, application review, and interview coaching. Work with experienced mentors who have successfully guided hundreds of students into top law schools worldwide.",
+      "price": 1499,
+      "originalPrice": 1999,
+      "duration": "16 weeks",
+      "format": ["Online", "In-Person", "Hybrid"],
+      "level": "All Levels",
+      "rating": 5.0,
+      "totalStudents": 423,
+      "totalReviews": 178,
+      "image": "law_school_package.jpg",
+      "category": "Complete Package",
+      "featured": true,
+      "instructorIds": ["inst-001", "inst-002", "inst-004", "inst-005", "inst-007"],
+      "highlights": [
+        "Full LSAT or LNAT preparation",
+        "Personal statement development and review",
+        "School selection strategy session",
+        "Application review and editing",
+        "Mock interview preparation",
+        "Letter of recommendation guidance",
+        "Financial aid and scholarship advice",
+        "Post-admission decision counseling"
+      ],
+      "curriculum": [
+        {
+          "week": "1-12",
+          "title": "Test Preparation Phase",
+          "topics": ["Complete LSAT or LNAT preparation", "Weekly progress tracking", "Strategy development"],
+          "materials": ["Full test prep materials", "Practice tests", "Study resources"]
+        },
+        {
+          "week": "8-12",
+          "title": "Application Strategy",
+          "topics": ["School research", "Application timeline", "Personal statement brainstorming", "Resume development"],
+          "materials": ["School guides", "Timeline planner", "Writing workshops"]
+        },
+        {
+          "week": "12-14",
+          "title": "Application Execution",
+          "topics": ["Essay writing and revision", "Application completion", "LOR strategy", "Supplemental essays"],
+          "materials": ["Writing feedback", "Application checklists", "Sample materials"]
+        },
+        {
+          "week": "14-16",
+          "title": "Interview & Decision Phase",
+          "topics": ["Interview preparation", "Mock interviews", "Decision counseling", "Negotiation strategies"],
+          "materials": ["Interview guide", "Practice sessions", "Decision framework"]
+        }
+      ],
+      "requirements": [
+        "Serious commitment to law school",
+        "15-20 hours per week availability",
+        "Undergraduate degree (or in progress)",
+        "Clear career goals"
+      ],
+      "outcomes": [
+        "Competitive test scores (LSAT/LNAT)",
+        "Compelling personal statement",
+        "Strategic school list",
+        "Polished applications",
+        "Interview readiness",
+        "Admission to target law schools"
+      ]
+    },
+    {
+      "id": "legal-writing-foundation",
+      "title": "Legal Writing Foundations",
+      "subtitle": "Build Essential Writing Skills for Law School",
+      "description": "Develop the fundamental writing skills you'll need to succeed in law school and beyond. Perfect for pre-law students and career changers.",
+      "longDescription": "Legal Writing Foundations prepares you for the rigorous writing demands of law school. Learn to analyze cases, structure legal arguments, write with clarity and precision, and master the conventions of legal citation. This course is ideal for pre-law students, those preparing for law school admissions tests, or anyone looking to develop professional legal writing skills.",
+      "price": 399,
+      "originalPrice": 499,
+      "duration": "8 weeks",
+      "format": ["Online"],
+      "level": "Beginner to Intermediate",
+      "rating": 4.7,
+      "totalStudents": 1234,
+      "totalReviews": 312,
+      "image": "legal_writing.jpg",
+      "category": "Skills Development",
+      "featured": false,
+      "instructorIds": ["inst-006", "inst-007"],
+      "highlights": [
+        "Case analysis techniques",
+        "Legal argumentation structure",
+        "Clear and concise writing",
+        "Bluebook citation mastery",
+        "Practical writing assignments",
+        "Peer review opportunities",
+        "Professional feedback"
+      ],
+      "curriculum": [
+        {
+          "week": 1,
+          "title": "Introduction to Legal Writing",
+          "topics": ["Legal writing vs. academic writing", "Reading cases", "IRAC method", "Clarity and precision"],
+          "materials": ["Writing handbook", "Sample briefs", "Practice cases"]
+        },
+        {
+          "week": 2,
+          "title": "Case Briefing",
+          "topics": ["Elements of a case brief", "Identifying holdings", "Dicta vs. holding", "Practice briefing"],
+          "materials": ["Case brief template", "Practice cases", "Model briefs"]
+        },
+        {
+          "week": 3,
+          "title": "Legal Analysis",
+          "topics": ["Rule-based reasoning", "Analogical reasoning", "Policy arguments", "Synthesis"],
+          "materials": ["Analysis guide", "Practice problems", "Feedback sessions"]
+        },
+        {
+          "week": 4,
+          "title": "Memorandum Writing",
+          "topics": ["Memo structure", "Question presented", "Brief answer", "Analysis section"],
+          "materials": ["Memo assignment", "Sample memos", "Writing workshop"]
+        },
+        {
+          "week": 5,
+          "title": "Persuasive Writing",
+          "topics": ["Advocacy techniques", "Framing issues", "Persuasive organization", "Addressing counter-arguments"],
+          "materials": ["Persuasive brief", "Examples", "Peer review"]
+        },
+        {
+          "week": 6,
+          "title": "Citation and Research",
+          "topics": ["Bluebook basics", "Citation rules", "Legal research", "Source evaluation"],
+          "materials": ["Citation guide", "Research exercises", "Practice problems"]
+        },
+        {
+          "week": 7,
+          "title": "Editing and Revision",
+          "topics": ["Self-editing techniques", "Common errors", "Style improvement", "Professional polish"],
+          "materials": ["Editing checklist", "Revision exercises", "Workshops"]
+        },
+        {
+          "week": 8,
+          "title": "Final Project",
+          "topics": ["Comprehensive writing assignment", "Peer feedback", "Final revision", "Presentation"],
+          "materials": ["Final assignment", "Rubric", "Feedback session"]
+        }
+      ],
+      "requirements": [
+        "Strong English writing skills",
+        "Interest in legal career",
+        "6-8 hours per week commitment"
+      ],
+      "outcomes": [
+        "Master fundamental legal writing skills",
+        "Analyze and brief cases effectively",
+        "Write clear, persuasive legal documents",
+        "Understand legal citation conventions",
+        "Build confidence for law school"
+      ]
+    }
+  ]
+}
