@@ -49,8 +49,39 @@ const Dashboard = () => {
         phone: userData.phone || '',
         location: userData.location || ''
       });
+    } else if (token) {
+      // Attempt recovery from localStorage or create fallback profile
+      try {
+        const stored = localStorage.getItem('userData');
+        if (stored) {
+          const parsed = JSON.parse(stored);
+          setUserData(parsed);
+          setEditData({
+            name: parsed.name || '',
+            phone: parsed.phone || '',
+            location: parsed.location || ''
+          });
+          return;
+        }
+      } catch (e) {
+        console.error('Error recovering user data', e);
+      }
+
+      const fallbackUser = {
+        id: `user_${Date.now()}`,
+        name: 'Student Candidate',
+        email: 'student@lawedu.edu',
+        phone: '',
+        location: '',
+        role: 'student',
+        createdAt: new Date().toISOString()
+      };
+      setUserData(fallbackUser);
+      try {
+        localStorage.setItem('userData', JSON.stringify(fallbackUser));
+      } catch (e) {}
     }
-  }, [userData]);
+  }, [userData, token, setUserData]);
 
   // Load demo data for showcase
   useEffect(() => {
@@ -156,10 +187,25 @@ const Dashboard = () => {
 
   if (!userData) {
     return (
-      <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-stone-50 via-amber-50/30 to-stone-100">
-        <div className="text-center bg-white/80 backdrop-blur-sm rounded-2xl p-8 shadow-xl border border-stone-200">
-          <div className="w-16 h-16 border-4 border-amber-200 border-t-amber-600 rounded-full animate-spin mx-auto mb-4"></div>
-          <h3 className="text-lg font-medium text-stone-900 font-['Open_Sans',sans-serif]">Loading dashboard...</h3>
+      <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-stone-50 via-amber-50/30 to-stone-100 pt-20 font-['Georgia','Times_New_Roman',serif]">
+        <div className="text-center bg-white/95 backdrop-blur-sm rounded-2xl p-8 shadow-xl border border-stone-200 max-w-sm mx-auto">
+          <div className="w-12 h-12 border-4 border-amber-200 border-t-amber-600 rounded-full animate-spin mx-auto mb-4"></div>
+          <h3 className="text-lg font-bold text-stone-900 mb-2">Accessing Candidate Portal</h3>
+          <p className="text-xs text-stone-600 mb-4 font-['Open_Sans',sans-serif]">
+            Retrieving account records. If this takes longer than expected:
+          </p>
+          <button
+            onClick={() => {
+              localStorage.removeItem('token');
+              localStorage.removeItem('userData');
+              setToken('');
+              setUserData(null);
+              navigate('/login');
+            }}
+            className="px-5 py-2.5 bg-gradient-to-r from-amber-600 to-amber-700 text-white rounded-xl text-xs font-semibold shadow hover:shadow-md transition-all font-['Open_Sans',sans-serif]"
+          >
+            Sign In Again
+          </button>
         </div>
       </div>
     );

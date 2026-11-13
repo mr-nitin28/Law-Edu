@@ -94,7 +94,7 @@ const StudentTestimonials = () => {
   )
 
   return (
-    <section className="py-16 px-4 bg-to-br from-stone-50 via-amber-50/30 to-stone-100 relative overflow-hidden font-['Georgia','Times_New_Roman',serif]">
+    <section className="w-full py-16 sm:py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-stone-50 via-amber-50/30 to-stone-100 relative overflow-hidden font-['Georgia','Times_New_Roman',serif]">
       
       {/* Background Decorative Elements */}
       <div className="absolute inset-0 overflow-hidden">

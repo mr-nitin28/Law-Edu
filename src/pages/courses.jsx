@@ -1,13 +1,14 @@
-import React, { useContext, useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { AppContext } from '../context/AppContext';
 import { toast } from 'react-toastify';
 import coursesDataJson from '../data/coursesData.json';
+import { getCourseImage } from '../assets/assets';
+import { Star, Award, ArrowRight, BookOpen, CheckCircle } from 'lucide-react';
 
 const Courses = () => {
   const navigate = useNavigate();
-  const { token, userData, backendUrl } = useContext(AppContext);
   const [courses, setCourses] = useState([]);
+  const [selectedCategory, setSelectedCategory] = useState('All');
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
@@ -16,13 +17,8 @@ const Courses = () => {
     const loadCourses = () => {
       try {
         setLoading(true)
-        // Load from local JSON file
         const allCourses = coursesDataJson.courses || [];
-        // Filter to only show LSAT and LNAT courses
-        const filteredCourses = allCourses.filter(course => 
-          course.category === 'LSAT' || course.category === 'LNAT'
-        )
-        setCourses(filteredCourses)
+        setCourses(allCourses);
         setError(null)
       } catch (error) {
         console.error('Error loading courses:', error)
@@ -35,6 +31,12 @@ const Courses = () => {
 
     loadCourses()
   }, [])
+
+  const filteredCourses = selectedCategory === 'All'
+    ? courses
+    : courses.filter(c => c.category === selectedCategory || (selectedCategory === 'Admissions' && (c.category === 'Complete Package' || c.category === 'Skills Development')));
+
+  const categories = ['All', 'LSAT', 'LNAT', 'Admissions'];
 
   if (loading) {
     return (
@@ -89,81 +91,107 @@ const Courses = () => {
 
       {/* Main Content */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12">
-        
+        {/* Category Filters */}
+        <div className="flex flex-wrap items-center justify-center gap-2 mb-10">
+          {categories.map((cat) => (
+            <button
+              key={cat}
+              onClick={() => setSelectedCategory(cat)}
+              className={`px-5 py-2 rounded-xl text-sm font-semibold transition-all duration-200 font-['Open_Sans',sans-serif] ${
+                selectedCategory === cat
+                  ? 'bg-amber-700 text-white shadow-md'
+                  : 'bg-white/80 text-stone-700 hover:bg-amber-50 border border-stone-200'
+              }`}
+            >
+              {cat}
+            </button>
+          ))}
+        </div>
+
         {/* Courses Grid */}
-        {courses.length === 0 ? (
+        {filteredCourses.length === 0 ? (
           <div className="text-center py-12">
-            <div className="w-16 h-16 bg-stone-200 rounded-xl mx-auto mb-4 flex items-center justify-center">
-              <div className="w-8 h-8 bg-stone-400 rounded"></div>
-            </div>
+            <BookOpen className="w-16 h-16 text-stone-300 mx-auto mb-4" />
             <h3 className="text-xl font-bold text-stone-800 mb-2">No Courses Available</h3>
-            <p className="text-stone-600 font-['Open_Sans',sans-serif]">LSAT and LNAT courses will be available soon.</p>
+            <p className="text-stone-600 font-['Open_Sans',sans-serif]">Please select another category to view available courses.</p>
           </div>
         ) : (
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8">
-            {courses.map((course) => (
+            {filteredCourses.map((course) => (
             <div
               key={course.id}
-              className="group bg-white/90 backdrop-blur-sm shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden relative hover:scale-[1.02] rounded-2xl border border-stone-200"
+              className="group bg-white/95 backdrop-blur-sm shadow-md hover:shadow-2xl transition-all duration-300 overflow-hidden relative rounded-2xl border border-stone-200/90 flex flex-col justify-between"
             >
-              {/* Featured Badge */}
-              {course.featured && (
-                <div className="absolute top-4 left-4 z-10 bg-gradient-to-r from-amber-500 to-amber-600 text-white px-3 py-1.5 rounded-xl text-xs font-semibold font-['Open_Sans',sans-serif] shadow-lg">
-                  <div className="flex items-center">
-                    <div className="w-1.5 h-1.5 bg-white rounded-full mr-2"></div>
-                    Featured
-                  </div>
-                </div>
-              )}
+              {/* Course Header with High-Quality Photography */}
+              <div className="relative h-48 sm:h-56 bg-stone-900 overflow-hidden">
+                  <img
+                    src={getCourseImage(course)}
+                    alt={course.title}
+                    className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700 ease-out"
+                    loading="lazy"
+                  />
+                  {/* Subtle dark gradient overlay */}
+                  <div className="absolute inset-0 bg-gradient-to-t from-stone-950/90 via-stone-900/35 to-stone-900/10 pointer-events-none"></div>
 
-              {/* Course Header */}
-              <div className="relative h-40 sm:h-48 bg-gradient-to-br from-amber-500 to-amber-600 flex items-center justify-center">
-                <div className="text-center text-white">
-                  <div className="w-12 h-12 sm:w-16 sm:h-16 mx-auto mb-3 bg-white/20 rounded-2xl flex items-center justify-center">
-                    <div className="w-6 h-6 sm:w-8 sm:h-8 bg-white rounded-lg"></div>
-                  </div>
-                  <h3 className="text-xl sm:text-2xl font-bold">{course.category}</h3>
-                  <p className="text-amber-100 text-sm font-['Open_Sans',sans-serif]">Professional Preparation</p>
-                </div>
-                
-                {/* Rating Badge */}
-                <div className="absolute top-4 right-4 flex items-center bg-white/20 backdrop-blur-sm px-3 py-1.5 rounded-xl">
-                  <div className="w-3 h-3 bg-yellow-300 rounded-full mr-2"></div>
-                  <span className="text-sm font-semibold text-white font-['Open_Sans',sans-serif]">{course.rating}</span>
-                </div>
-              </div>
-
-              {/* Course Content */}
-              <div className="p-6">
-                
-                {/* Title Section */}
-                <div className="mb-4">
-                  <h3 className="text-xl sm:text-2xl font-bold text-stone-800 mb-2 hover:text-amber-700 cursor-pointer transition-colors duration-200">
-                    {course.title}
-                  </h3>
-                  <p className="text-stone-600 font-medium mb-2 font-['Open_Sans',sans-serif]">{course.subtitle}</p>
-                  <p className="text-stone-600 leading-relaxed line-clamp-2 font-['Open_Sans',sans-serif]">{course.description}</p>
-                </div>
-
-                {/* Key Features */}
-                <div className="mb-6">
-                  <h4 className="font-bold text-stone-800 mb-3 text-sm uppercase tracking-wide">
-                    Key Features:
-                  </h4>
-                  <div className="space-y-2">
-                    {course.highlights.slice(0, 3).map((highlight, index) => (
-                      <div key={index} className="flex items-start text-sm text-stone-600 font-['Open_Sans',sans-serif]">
-                        <div className="w-2 h-2 bg-amber-600 rounded-full mr-3 mt-2 flex-shrink-0"></div>
-                        <span>{highlight}</span>
-                      </div>
-                    ))}
-                    {course.highlights.length > 3 && (
-                      <p className="text-sm text-amber-700 font-medium ml-5 font-['Open_Sans',sans-serif]">
-                        +{course.highlights.length - 3} more features
-                      </p>
+                  {/* Badges on Image */}
+                  <div className="absolute top-4 left-4 z-10 flex items-center gap-2">
+                    <span className="bg-amber-600/95 backdrop-blur-md text-white text-xs font-semibold px-3 py-1 rounded-lg shadow font-['Open_Sans',sans-serif]">
+                      {course.category}
+                    </span>
+                    {course.featured && (
+                      <span className="bg-stone-900/80 backdrop-blur-md border border-amber-400/40 text-amber-300 text-xs font-medium px-2.5 py-1 rounded-lg flex items-center gap-1.5 font-['Open_Sans',sans-serif]">
+                        <span className="w-1.5 h-1.5 rounded-full bg-amber-400 animate-pulse"></span>
+                        Featured
+                      </span>
                     )}
                   </div>
+
+                  {/* Rating Badge */}
+                  <div className="absolute top-4 right-4 z-10 flex items-center bg-stone-950/75 backdrop-blur-md border border-white/15 px-3 py-1 rounded-lg shadow">
+                    <Star className="w-3.5 h-3.5 text-amber-400 fill-amber-400 mr-1.5" />
+                    <span className="text-xs font-bold text-white font-['Open_Sans',sans-serif]">{course.rating}</span>
+                  </div>
+
+                  {/* Bottom Image Stats */}
+                  <div className="absolute bottom-3 left-4 right-4 z-10 flex items-center justify-between text-white/90">
+                    <span className="text-xs font-medium text-amber-200/95 font-['Open_Sans',sans-serif] flex items-center gap-1.5">
+                      <Award className="w-3.5 h-3.5 text-amber-400" />
+                      Top 1% Tutors
+                    </span>
+                    <span className="text-xs text-stone-300 font-['Open_Sans',sans-serif] bg-black/45 px-2.5 py-0.5 rounded">
+                      {course.duration}
+                    </span>
+                  </div>
                 </div>
+
+                {/* Course Content */}
+                <div className="p-6">
+                  {/* Title Section */}
+                  <div className="mb-4">
+                    <h3 
+                      onClick={() => navigate(`/course/${course.id}`)}
+                      className="text-xl sm:text-2xl font-bold text-stone-800 mb-1.5 hover:text-amber-700 cursor-pointer transition-colors duration-200 font-['Georgia',serif]"
+                    >
+                      {course.title}
+                    </h3>
+                    <p className="text-amber-800 font-medium text-sm mb-2 font-['Open_Sans',sans-serif]">{course.subtitle}</p>
+                    <p className="text-stone-600 leading-relaxed text-sm line-clamp-2 font-['Open_Sans',sans-serif]">{course.description}</p>
+                  </div>
+
+                  {/* Key Features */}
+                  <div className="mb-6">
+                    <h4 className="font-bold text-stone-800 mb-3 text-xs uppercase tracking-wide">
+                      Highlights:
+                    </h4>
+                    <div className="space-y-2">
+                      {course.highlights.slice(0, 3).map((highlight, index) => (
+                        <div key={index} className="flex items-start text-xs sm:text-sm text-stone-600 font-['Open_Sans',sans-serif]">
+                          <CheckCircle className="w-3.5 h-3.5 text-amber-600 mr-2.5 mt-0.5 flex-shrink-0" />
+                          <span className="line-clamp-1">{highlight}</span>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
 
                 {/* Pricing and CTA */}
                 <div className="flex items-center justify-between pt-4 border-t border-stone-200">
@@ -185,13 +213,10 @@ const Courses = () => {
                   
                   <button
                     onClick={() => navigate(`/course/${course.id}`)}
-                    className="group inline-flex items-center justify-center px-6 py-3 bg-gradient-to-r from-amber-600 to-amber-700 text-white font-semibold hover:from-amber-700 hover:to-amber-800 transform hover:scale-[1.02] transition-all duration-300 shadow-lg hover:shadow-xl rounded-xl font-['Open_Sans',sans-serif]"
+                    className="group inline-flex items-center justify-center px-5 py-2.5 bg-gradient-to-r from-amber-600 to-amber-700 text-white font-semibold hover:from-amber-700 hover:to-amber-800 transform hover:scale-[1.02] transition-all duration-300 shadow-md hover:shadow-lg rounded-xl text-sm font-['Open_Sans',sans-serif]"
                   >
                     View Details
-                    <div className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform duration-300">
-                      <div className="w-full h-0.5 bg-white rounded-full transform rotate-45 translate-y-2"></div>
-                      <div className="w-full h-0.5 bg-white rounded-full transform -rotate-45 -translate-y-0.5"></div>
-                    </div>
+                    <ArrowRight className="w-4 h-4 ml-1.5 group-hover:translate-x-1 transition-transform duration-300" />
                   </button>
                 </div>
               </div>
@@ -199,18 +224,7 @@ const Courses = () => {
           ))}
           </div>
         )}
-
-        </div>
-
-      {/* CSS for line clamping */}
-      <style jsx>{`
-        .line-clamp-2 {
-          display: -webkit-box;
-          -webkit-line-clamp: 2;
-          -webkit-box-orient: vertical;
-          overflow: hidden;
-        }
-      `}</style>
+      </div>
     </div>
   );
 };

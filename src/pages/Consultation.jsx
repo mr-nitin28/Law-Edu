@@ -1,7 +1,7 @@
 import React, { useContext, useEffect, useState } from 'react'
 import { useNavigate, useParams } from 'react-router-dom'
 import { AppContext } from '../context/AppContext'
-import { assets } from '../assets/assets'
+import { assets, getInstructorImage } from '../assets/assets'
 import RelatedInstructors from '../components/RelatedInstructors'
 import axios from 'axios'
 import { toast } from 'react-toastify'
@@ -20,8 +20,8 @@ const Consultation = () => {
     const navigate = useNavigate()
 
     const fetchInstructorInfo = async () => {
-        const instructorInfo = instructors.find((instructor) => instructor._id === instructorId)
-        setInstructorInfo(instructorInfo)
+        const instructorInfo = instructors.find((instructor) => (instructor._id === instructorId || instructor.id === instructorId))
+        setInstructorInfo(instructorInfo || instructors[0])
     }
 
     const getAvailableSlots = async () => {
@@ -133,9 +133,9 @@ const Consultation = () => {
         <div>
 
             {/* ---------- Instructor Details ----------- */}
-            <div className='flex flex-col sm:flex-row gap-4'>
-                <div>
-                    <img className='bg-primary w-full sm:max-w-72 rounded-lg' src={instructorInfo.image} alt="" />
+            <div className='flex flex-col sm:flex-row gap-6 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8'>
+                <div className='flex-shrink-0'>
+                    <img className='bg-stone-900 w-full sm:w-72 h-80 rounded-2xl object-cover object-top shadow-lg border border-stone-200' src={getInstructorImage(instructorInfo)} alt={instructorInfo.name} />
                 </div>
 
                 <div className='flex-1 border border-[#ADADAD] rounded-lg p-8 py-7 bg-white mx-2 sm:mx-0 mt-[-80px] sm:mt-0'>

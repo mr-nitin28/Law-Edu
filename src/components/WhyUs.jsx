@@ -28,7 +28,7 @@ const WhyUs = () => {
   ]
 
   return (
-    <section className="py-16 bg-to-br from-white via-stone-50/50 to-amber-50/30 font-['Georgia','Times_New_Roman',serif]">
+    <section className="w-full py-16 sm:py-20 bg-gradient-to-br from-white via-stone-50/50 to-amber-50/30 font-['Georgia','Times_New_Roman',serif]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Section Header */}

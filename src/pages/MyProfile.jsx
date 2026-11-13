@@ -46,7 +46,8 @@ const MyProfile = () => {
     }
 
     return userData ? (
-        <div className='max-w-lg flex flex-col gap-2 text-sm pt-5'>
+        <div className="w-full max-w-3xl mx-auto px-4 sm:px-6 pt-24 pb-16 font-['Georgia','Times_New_Roman',serif]">
+            <div className='flex flex-col gap-2 text-sm bg-white p-6 sm:p-8 rounded-2xl shadow-lg border border-stone-200'>
 
             {isEdit
                 ? <label htmlFor='image' >
@@ -120,6 +121,7 @@ const MyProfile = () => {
                     : <button onClick={() => setIsEdit(true)} className='border border-primary px-8 py-2 rounded-full hover:bg-primary hover:text-white transition-all'>Edit</button>
                 }
 
+            </div>
             </div>
         </div>
     ) : null

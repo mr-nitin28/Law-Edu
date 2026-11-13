@@ -79,7 +79,9 @@ const Navbar = () => {
               onClick={() => navigate('/')} 
               className="flex items-center space-x-3 cursor-pointer group transition-transform duration-300 hover:scale-105"
             >
-              
+              <div className="w-9 h-9 bg-gradient-to-br from-amber-500 to-amber-600 rounded-xl flex items-center justify-center shadow-md">
+                <Scale className="w-5 h-5 text-white" />
+              </div>
               <div className="hidden sm:block">
                 <span className="text-xl lg:text-2xl font-bold text-stone-800 tracking-tight">
                   LawEdu

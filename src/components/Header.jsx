@@ -35,7 +35,7 @@ const Header = () => {
   }
 
   return (
-    <div className="bg-to-br from-stone-50 via-amber-50/30 to-stone-100 font-['Georgia','Times_New_Roman',serif]">
+    <div className="w-full bg-gradient-to-br from-stone-50 via-amber-50/30 to-stone-100 font-['Georgia','Times_New_Roman',serif] relative overflow-hidden">
       {/* Subtle Background Elements */}
       <div className="absolute inset-0 overflow-hidden hidden lg:block">
         <div className="absolute -top-20 -right-20 w-40 h-40 bg-amber-200/20 rounded-full blur-3xl"></div>
@@ -46,7 +46,7 @@ const Header = () => {
 
       {/* Main Container */}
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex flex-col lg:flex-row items-center justify-center min-h-[80vh] lg:min-h-screen py-12 lg:py-20 gap-8 lg:gap-16">
+        <div className="flex flex-col lg:flex-row items-center justify-center min-h-[80vh] lg:min-h-[92vh] pt-24 pb-12 lg:pt-28 lg:pb-16 gap-8 lg:gap-16">
           
           {/* Left Content */}
           <div className={`w-full lg:w-1/2 text-center lg:text-left space-y-6 lg:space-y-8 transform transition-all duration-1000 ${

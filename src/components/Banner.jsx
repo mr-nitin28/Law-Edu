@@ -6,7 +6,7 @@ const Banner = () => {
   const navigate = useNavigate()
 
   return (
-    <div className="my-12 sm:my-16 mx-4 sm:mx-6 lg:mx-10 font-['Georgia','Times_New_Roman',serif]">
+    <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 my-14 sm:my-20 font-['Georgia','Times_New_Roman',serif]">
       {/* Main Banner Container - Same as Header Background */}
       <div className="relative bg-gradient-to-br from-stone-50 via-amber-50/30 to-stone-100 overflow-hidden rounded-2xl shadow-2xl border border-stone-200">
         
@@ -84,12 +84,14 @@ const Banner = () => {
             {/* Trust Indicators */}
             <div className="hidden lg:flex items-center space-x-4 pt-6">
               <div className="flex items-center space-x-2">
-                <div className="flex -space-x-1">
-                  {[1, 2, 3, 4].map((i) => (
-                    <div
+                <div className="flex -space-x-1.5">
+                  {[assets.law1, assets.law2, assets.law3, assets.law4].map((img, i) => (
+                    <img
                       key={i}
-                      className="w-8 h-8 border-2 border-white bg-gradient-to-r from-amber-500 to-amber-600 rounded-full shadow-md"
-                    ></div>
+                      src={img}
+                      alt="Student"
+                      className="w-8 h-8 border-2 border-white rounded-full object-cover object-top shadow-sm"
+                    />
                   ))}
                 </div>
                 <span className="text-stone-600 text-sm font-['Open_Sans',sans-serif]">Join 5,000+ successful students</span>

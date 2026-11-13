@@ -122,8 +122,8 @@ const MyConsultations = () => {
     }, [token])
 
     return (
-        <div>
-            <p className='pb-3 mt-12 text-lg font-medium text-gray-600 border-b'>My consultations</p>
+        <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-24 pb-16 font-['Georgia','Times_New_Roman',serif]">
+            <p className='pb-3 text-2xl font-bold text-stone-800 border-b border-stone-200'>My Consultations</p>
             <div className=''>
                 {consultations.map((item, index) => (
                     <div key={index} className='grid grid-cols-[1fr_2fr] gap-4 sm:flex sm:gap-6 py-4 border-b'>

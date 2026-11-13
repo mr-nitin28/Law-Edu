@@ -1,260 +1,272 @@
-import React, { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
+import { useState, useEffect } from 'react';
+import { Link, useNavigate } from 'react-router-dom';
+import { 
+  Star, 
+  Clock, 
+  GraduationCap, 
+  Award, 
+  ChevronLeft, 
+  ChevronRight, 
+  Calendar,
+  ArrowRight
+} from 'lucide-react';
 import law2 from '../assets/law2.png';
+import law1 from '../assets/law1.png';
 import law3 from '../assets/law3.png';
 import law4 from '../assets/law4.png';
-import law5 from '../assets/law5.png';
 
-const Instructors = () => {
+const FeaturedInstructors = () => {
+  const navigate = useNavigate();
   const [currentInstructorIndex, setCurrentInstructorIndex] = useState(0);
+  const [isPaused, setIsPaused] = useState(false);
   
-  // Static instructor data
+  // Distinguished faculty data with high-res portraits
   const instructors = [
     {
-      id: 1,
-      name: "Dr. Sarah Mitchell",
-      title: "Senior LSAT Instructor",
-      experience: "12+ Years Experience",
-      education: "Harvard Law School, J.D. • Yale University, B.A.",
-      specializations: ["LSAT Logical Reasoning", "Reading Comprehension", "Analytical Writing"],
+      id: "inst-001",
+      name: "Dr. Emily Richardson",
+      title: "Lead LSAT Instructor",
+      experience: "12+ Years",
+      education: "Harvard Law School, J.D. • Magna Cum Laude",
+      specializations: ["Logical Reasoning", "Reading Comp", "Analytical Writing"],
       rating: 4.9,
       totalReviews: 342,
-      profileImage: law2, // Imported local image
-      bio: "Dr. Mitchell brings over a decade of expertise in LSAT preparation, having helped thousands of students achieve their target scores and gain admission to top-tier law schools.",
-      highlight: "Achieved 98% success rate for students scoring 165+"
+      profileImage: law2,
+      bio: "Harvard Law alumna with 12+ years experience mentoring 2,000+ candidates into Yale, Harvard, and Stanford with an average +15 point score improvement.",
+      highlight: "99.9th Percentile (178 LSAT) • 98% 165+ Success Rate"
     },
     {
-      id: 2,
-      name: "Prof. James Patterson",
-      title: "LNAT Expert & Oxford Graduate",
-      experience: "15+ Years Experience",
-      education: "Oxford University, B.A. Law • Cambridge University, M.A.",
-      specializations: ["LNAT Preparation", "Critical Thinking", "Legal Reasoning"],
-      rating: 4.8,
+      id: "inst-002",
+      name: "Prof. Michael Chen",
+      title: "Senior Logic Games Specialist",
+      experience: "10+ Years",
+      education: "Yale Law School, J.D. • Princeton University",
+      specializations: ["Logic Games", "Diagramming", "Speed Strategies"],
+      rating: 5.0,
       totalReviews: 298,
-      profileImage: law3, // Replace with actual image
-      bio: "Professor Patterson specializes in LNAT preparation with extensive experience in UK legal education, helping students secure places at prestigious institutions like Oxford and Cambridge.",
-      highlight: "Guided 500+ students to UK's top law schools"
+      profileImage: law1,
+      bio: "Creator of the renowned Chen Logic Games Method, helping students achieve flawless accuracy and save vital test minutes under pressure.",
+      highlight: "Perfect 180 LSAT Score • Trained 3,000+ Students"
     },
     {
-      id: 3,
-      name: "Dr. Emily Rodriguez",
-      title: "Constitutional Law Expert",
-      experience: "10+ Years Experience", 
-      education: "Stanford Law School, J.D. • UC Berkeley, B.A. Political Science",
-      specializations: ["LSAT Games", "Constitutional Law", "Legal Analysis"],
+      id: "inst-003",
+      name: "Sarah Martinez, J.D.",
+      title: "LNAT & UK Admissions Director",
+      experience: "8+ Years",
+      education: "Oxford University, B.A. Jurisprudence • Cambridge M.A.",
+      specializations: ["LNAT Section A & B", "Critical Thinking", "UK Law"],
+      rating: 4.8,
+      totalReviews: 264,
+      profileImage: law3,
+      bio: "Specializing in UK legal admissions, guiding hundreds of applicants to Oxford, Cambridge, UCL, and LSE with structured essay argumentation drills.",
+      highlight: "Guided 500+ students to Oxford & Cambridge Law"
+    },
+    {
+      id: "inst-004",
+      name: "Dr. James Anderson",
+      title: "Constitutional Law & Admissions Mentor",
+      experience: "14+ Years",
+      education: "Stanford Law School, J.D. • Columbia Fellow",
+      specializations: ["Constitutional Law", "Logic Games", "Admissions SOP"],
       rating: 4.9,
-      totalReviews: 276,
-      profileImage: law4, // Replace with actual image
-      bio: "Dr. Rodriguez combines her Supreme Court experience with proven teaching methods to help students master complex legal reasoning and analytical skills.",
-      highlight: "Specialized in Logic Games with 95% student improvement"
-    },
-    {
-      id: 4,
-      name: "Prof. Michael Thompson",
-      title: "Legal Writing Specialist",
-      experience: "8+ Years Experience",
-      education: "Columbia Law School, J.D. • Princeton University, B.A.",
-      specializations: ["Legal Writing", "LSAT Writing", "Analytical Skills"],
-      rating: 4.7,
-      totalReviews: 189,
-      profileImage: law5, // Replace with actual image
-      bio: "Professor Thompson excels in developing students' legal writing and analytical skills, essential for both LSAT success and law school preparation.",
-      highlight: "Enhanced writing skills for 800+ aspiring lawyers"
+      totalReviews: 312,
+      profileImage: law4,
+      bio: "Former appellate clerk combining rigorous legal doctrine with tailored mentoring to optimize test psychology and admissions positioning.",
+      highlight: "95% Logic Games Improvement Rate"
     }
   ];
 
-  // Auto-cycle through instructors every 3 seconds
+  // Auto-cycle through instructors every 5 seconds, pauses when hovered
   useEffect(() => {
+    if (isPaused) return;
     const interval = setInterval(() => {
       setCurrentInstructorIndex((prevIndex) => 
         (prevIndex + 1) % instructors.length
       );
-    }, 3000);
+    }, 5000);
 
     return () => clearInterval(interval);
-  }, [instructors.length]);
+  }, [isPaused, instructors.length]);
 
   const currentInstructor = instructors[currentInstructorIndex];
 
-  const getRatingDisplay = (rating) => {
-    const fullStars = Math.floor(rating);
-    return (
-      <div className="flex items-center space-x-1">
-        {Array.from({ length: 5 }, (_, index) => (
-          <div
-            key={index}
-            className={`w-3 h-3 rounded-full transition-colors duration-300 ${
-              index < fullStars ? 'bg-amber-400' : 'bg-stone-300'
-            }`}
-          />
-        ))}
-      </div>
-    );
+  const handlePrev = () => {
+    setCurrentInstructorIndex((prev) => (prev - 1 + instructors.length) % instructors.length);
+  };
+
+  const handleNext = () => {
+    setCurrentInstructorIndex((prev) => (prev + 1) % instructors.length);
   };
 
   return (
-    <section className="py-16 bg-to-br from-stone-50 via-amber-50/30 to-stone-100 font-['Georgia','Times_New_Roman',serif]">
+    <section className="w-full py-12 sm:py-16 bg-gradient-to-br from-stone-50 via-amber-50/20 to-stone-100 font-['Georgia','Times_New_Roman',serif]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
-        {/* Section Header */}
-        <div className="text-center mb-16">
-          <div className="inline-flex items-center px-4 py-2 bg-amber-100 rounded-xl text-amber-700 text-sm font-medium mb-6 border border-amber-200">
-            <div className="w-2 h-2 bg-amber-600 rounded-full mr-2"></div>
+        {/* Section Header - Compact and punchy */}
+        <div className="text-center mb-8 sm:mb-10">
+          <div className="inline-flex items-center px-3.5 py-1.5 bg-amber-100/90 rounded-full text-amber-800 text-xs font-semibold mb-3 border border-amber-200">
+            <GraduationCap className="w-3.5 h-3.5 mr-1.5 text-amber-700" />
             <span className="font-['Open_Sans',sans-serif]">Expert Faculty</span>
           </div>
           
-          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-stone-800 mb-4 leading-tight">
-            Meet Our Distinguished
-            <br />
+          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-stone-800 mb-2 leading-tight">
+            Meet Our Distinguished{' '}
             <span className="bg-gradient-to-r from-amber-600 to-amber-800 bg-clip-text text-transparent">
               Legal Instructors
             </span>
           </h2>
           
-          <p className="text-lg text-stone-600 max-w-3xl mx-auto leading-relaxed font-['Open_Sans',sans-serif]">
-            Learn from accomplished legal professionals with proven track records
+          <p className="text-sm sm:text-base text-stone-600 max-w-2xl mx-auto leading-relaxed font-['Open_Sans',sans-serif]">
+            Learn from accomplished legal educators with proven 99th-percentile credentials
           </p>
         </div>
 
-        {/* Dynamic Instructor Showcase - Reduced Width */}
-        <div className="max-w-4xl mx-auto">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
+        {/* Compact Instructor Showcase Card */}
+        <div 
+          className="max-w-4xl mx-auto bg-white/95 backdrop-blur-sm rounded-2xl shadow-xl border border-stone-200/90 overflow-hidden"
+          onMouseEnter={() => setIsPaused(true)}
+          onMouseLeave={() => setIsPaused(false)}
+        >
+          <div className="flex flex-col sm:flex-row items-stretch">
             
-            {/* Instructor Photo - Reduced Width */}
-            <div className="order-2 lg:order-1">
-              <div className="relative max-w-xs mx-auto">
-                {/* Main Photo Container - Smaller Size */}
-                <div className="aspect-[3/4] rounded-xl overflow-hidden shadow-xl border border-stone-200 transition-all duration-1000 ease-in-out transform">
-                  {currentInstructor.profileImage ? (
-                    <img
-                      key={currentInstructor.id}
-                      src={currentInstructor.profileImage}
-                      alt={currentInstructor.name}
-                      className="w-full h-full object-cover transition-opacity duration-1000"
-                    />
-                  ) : (
-                    <div className="w-full h-full bg-gradient-to-br from-amber-500 to-amber-600 flex items-center justify-center transition-all duration-1000">
-                      <div className="w-16 h-16 bg-white/20 rounded-xl flex items-center justify-center">
-                        <div className="w-8 h-8 bg-white rounded-lg"></div>
-                      </div>
-                    </div>
-                  )}
-                </div>
-                
-                {/* Floating Rating Badge - Smaller */}
-                <div className="absolute -top-3 -right-3 z-10">
-                  <div className="bg-white rounded-xl px-3 py-2 shadow-lg border border-stone-200 transition-all duration-1000">
-                    <div className="text-center">
-                      {getRatingDisplay(currentInstructor.rating)}
-                      <div className="text-sm font-bold text-stone-800 mt-1">
-                        {currentInstructor.rating}
-                      </div>
-                      <div className="text-xs text-stone-500 font-['Open_Sans',sans-serif]">
-                        {currentInstructor.totalReviews} reviews
-                      </div>
-                    </div>
-                  </div>
-                </div>
+            {/* Left Column: Compact High-Res Portrait Container */}
+            <div className="w-full sm:w-64 md:w-72 bg-stone-900 relative overflow-hidden flex-shrink-0 min-h-[260px] sm:min-h-[320px]">
+              <img
+                key={currentInstructor.id}
+                src={currentInstructor.profileImage}
+                alt={currentInstructor.name}
+                className="w-full h-full object-cover object-top transition-opacity duration-500 ease-out"
+              />
+              
+              {/* Subtle visual gradient */}
+              <div className="absolute inset-0 bg-gradient-to-t from-stone-950/90 via-stone-950/20 to-transparent pointer-events-none"></div>
 
-                {/* Experience Badge - Smaller */}
-                <div className="absolute -bottom-3 left-3 z-10">
-                  <div className="bg-gradient-to-r from-amber-600 to-amber-700 text-white px-3 py-1.5 rounded-lg shadow-lg">
-                    <span className="text-xs font-semibold font-['Open_Sans',sans-serif]">
-                      {currentInstructor.experience}
-                    </span>
-                  </div>
+              {/* Floating Top Rating Badge */}
+              <div className="absolute top-3.5 left-3.5 z-10">
+                <div className="bg-stone-950/75 backdrop-blur-md border border-white/15 px-2.5 py-1 rounded-lg shadow flex items-center gap-1.5">
+                  <Star className="w-3.5 h-3.5 text-amber-400 fill-amber-400" />
+                  <span className="text-xs font-bold text-white font-['Open_Sans',sans-serif]">{currentInstructor.rating}</span>
+                  <span className="text-[11px] text-stone-300 font-['Open_Sans',sans-serif]">({currentInstructor.totalReviews})</span>
                 </div>
+              </div>
+
+              {/* Floating Experience Badge */}
+              <div className="absolute bottom-3.5 left-3.5 z-10">
+                <span className="bg-amber-600/95 backdrop-blur-md text-white text-xs font-semibold px-2.5 py-1 rounded-md shadow flex items-center gap-1 font-['Open_Sans',sans-serif]">
+                  <Clock className="w-3 h-3" />
+                  {currentInstructor.experience} Exp
+                </span>
               </div>
             </div>
 
-            {/* Instructor Details - Reduced Width */}
-            <div className="order-1 lg:order-2">
-              <div className="bg-white/90 backdrop-blur-sm rounded-xl p-6 shadow-xl border border-stone-200 transition-all duration-1000 ease-in-out transform">
-                
-                {/* Name and Title */}
-                <div className="mb-5 transition-all duration-1000">
-                  <h3 className="text-2xl font-bold text-stone-800 mb-2 transition-all duration-1000">
-                    {currentInstructor.name}
-                  </h3>
-                  <p className="text-amber-700 font-semibold text-lg font-['Open_Sans',sans-serif] transition-all duration-1000">
-                    {currentInstructor.title}
-                  </p>
-                </div>
-
-                {/* Highlight */}
-                <div className="mb-5">
-                  <div className="bg-amber-50 border border-amber-200 rounded-lg p-3 transition-all duration-1000">
-                    <div className="flex items-center">
-                      <div className="w-2 h-2 bg-amber-600 rounded-full mr-2 flex-shrink-0"></div>
-                      <p className="text-amber-800 font-medium font-['Open_Sans',sans-serif] text-sm">
-                        {currentInstructor.highlight}
-                      </p>
-                    </div>
+            {/* Right Column: Sleek, compact details */}
+            <div className="flex-1 p-5 sm:p-7 flex flex-col justify-between">
+              <div>
+                {/* Header: Name, Title, and Education */}
+                <div className="flex flex-col sm:flex-row sm:items-baseline justify-between gap-1 mb-2 border-b border-stone-100 pb-3">
+                  <div>
+                    <h3 className="text-xl sm:text-2xl font-bold text-stone-800">
+                      {currentInstructor.name}
+                    </h3>
+                    <p className="text-amber-800 font-semibold text-sm font-['Open_Sans',sans-serif]">
+                      {currentInstructor.title}
+                    </p>
                   </div>
-                </div>
-
-                {/* Education */}
-                <div className="mb-5 transition-all duration-1000">
-                  <h4 className="font-bold text-stone-800 mb-2 text-sm uppercase tracking-wide">
-                    Education
-                  </h4>
-                  <p className="text-stone-700 font-['Open_Sans',sans-serif] leading-relaxed text-sm">
+                  <p className="text-xs text-stone-500 font-['Open_Sans',sans-serif]">
                     {currentInstructor.education}
                   </p>
                 </div>
 
-                {/* Specializations */}
-                <div className="mb-5 transition-all duration-1000">
-                  <h4 className="font-bold text-stone-800 mb-2 text-sm uppercase tracking-wide">
-                    Expertise Areas
-                  </h4>
-                  <div className="flex flex-wrap gap-2">
-                    {currentInstructor.specializations.map((spec, index) => (
-                      <span
-                        key={index}
-                        className="inline-flex items-center px-2 py-1 bg-amber-100 text-amber-700 rounded-lg text-xs font-medium border border-amber-200 font-['Open_Sans',sans-serif] transition-all duration-1000"
-                      >
-                        <div className="w-1 h-1 bg-amber-600 rounded-full mr-1.5"></div>
-                        {spec}
-                      </span>
-                    ))}
-                  </div>
+                {/* Highlight banner */}
+                <div className="bg-amber-50/80 border border-amber-200/70 rounded-xl px-3.5 py-2 mb-3.5 flex items-center">
+                  <Award className="w-4 h-4 text-amber-700 mr-2 flex-shrink-0" />
+                  <p className="text-amber-900 font-medium font-['Open_Sans',sans-serif] text-xs sm:text-sm">
+                    {currentInstructor.highlight}
+                  </p>
                 </div>
 
-                {/* Bio */}
-                <div className="transition-all duration-1000">
-                  <p className="text-stone-600 leading-relaxed font-['Open_Sans',sans-serif] text-sm">
-                    {currentInstructor.bio}
-                  </p>
+                {/* Bio: Concise 2 lines */}
+                <p className="text-stone-600 leading-relaxed text-xs sm:text-sm line-clamp-2 font-['Open_Sans',sans-serif] mb-3.5">
+                  {currentInstructor.bio}
+                </p>
+
+                {/* Specializations: Compact tags */}
+                <div className="flex flex-wrap gap-1.5 mb-4">
+                  {currentInstructor.specializations.map((spec, index) => (
+                    <span
+                      key={index}
+                      className="inline-flex items-center px-2.5 py-0.5 bg-stone-100 text-stone-700 rounded-md text-xs font-medium border border-stone-200/80 font-['Open_Sans',sans-serif]"
+                    >
+                      <span className="w-1.5 h-1.5 bg-amber-600 rounded-full mr-1.5"></span>
+                      {spec}
+                    </span>
+                  ))}
+                </div>
+              </div>
+
+              {/* Bottom Action & Interactive Quick Faculty Switcher */}
+              <div className="pt-3 border-t border-stone-200/80 flex flex-wrap items-center justify-between gap-3">
+                <button
+                  onClick={() => navigate('/book-consultation')}
+                  className="inline-flex items-center px-4 py-2 sm:px-5 sm:py-2.5 bg-gradient-to-r from-amber-600 to-amber-700 text-white font-semibold rounded-xl text-xs sm:text-sm shadow-md hover:shadow-lg hover:from-amber-700 hover:to-amber-800 transition-all font-['Open_Sans',sans-serif]"
+                >
+                  <Calendar className="w-3.5 h-3.5 mr-1.5" />
+                  Book 1-on-1 Consultation
+                </button>
+
+                {/* Faculty Thumbnail Switchers & Prev/Next */}
+                <div className="flex items-center space-x-2">
+                  <div className="flex items-center -space-x-1 mr-1">
+                    {instructors.map((inst, index) => (
+                      <button
+                        key={inst.id}
+                        onClick={() => setCurrentInstructorIndex(index)}
+                        title={inst.name}
+                        className={`relative w-8 h-8 rounded-full overflow-hidden border-2 transition-all transform ${
+                          index === currentInstructorIndex
+                            ? 'border-amber-600 scale-110 z-10 shadow-md ring-2 ring-amber-300'
+                            : 'border-white opacity-60 hover:opacity-100'
+                        }`}
+                      >
+                        <img src={inst.profileImage} alt={inst.name} className="w-full h-full object-cover" />
+                      </button>
+                    ))}
+                  </div>
+
+                  <button
+                    onClick={handlePrev}
+                    aria-label="Previous Instructor"
+                    className="p-1.5 rounded-lg bg-stone-100 hover:bg-amber-100 text-stone-700 hover:text-amber-800 transition-colors"
+                  >
+                    <ChevronLeft className="w-4 h-4" />
+                  </button>
+                  <button
+                    onClick={handleNext}
+                    aria-label="Next Instructor"
+                    className="p-1.5 rounded-lg bg-stone-100 hover:bg-amber-100 text-stone-700 hover:text-amber-800 transition-colors"
+                  >
+                    <ChevronRight className="w-4 h-4" />
+                  </button>
                 </div>
               </div>
             </div>
           </div>
-
-          {/* Instructor Navigation Dots */}
-          <div className="flex justify-center mt-10 space-x-2">
-            {instructors.map((_, index) => (
-              <button
-                key={index}
-                onClick={() => setCurrentInstructorIndex(index)}
-                className={`w-2.5 h-2.5 rounded-full transition-all duration-300 ${
-                  index === currentInstructorIndex 
-                    ? 'bg-amber-600 w-6' 
-                    : 'bg-stone-300 hover:bg-stone-400'
-                }`}
-              />
-            ))}
-          </div>
         </div>
 
-        {/* Call to Action */}
-        
-         
-        
+        {/* View All Faculty Link */}
+        <div className="text-center mt-6">
+          <Link
+            to="/instructors"
+            className="inline-flex items-center text-sm font-semibold text-amber-700 hover:text-amber-800 transition-colors font-['Open_Sans',sans-serif]"
+          >
+            Explore All Legal Educators
+            <ArrowRight className="w-4 h-4 ml-1.5" />
+          </Link>
+        </div>
+
       </div>
     </section>
   );
 };
 
-export default Instructors;
+export default FeaturedInstructors;

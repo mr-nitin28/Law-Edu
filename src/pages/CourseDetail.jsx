@@ -22,6 +22,7 @@ import { AppContext } from '../context/AppContext';
 import { toast } from 'react-toastify';
 import EnrollmentModal from '../components/EnrollmentModal';
 import coursesDataJson from '../data/coursesData.json';
+import { getCourseImage } from '../assets/assets';
 
 const CourseDetail = () => {
   const { courseId } = useParams();
@@ -237,26 +238,49 @@ const CourseDetail = () => {
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
           {/* Main Content */}
           <div className="lg:col-span-2 space-y-8">
-            {/* Course Hero - Minimalistic */}
+            {/* Course Hero with High-Quality Photography */}
             <div className="bg-white rounded-2xl shadow-sm border border-stone-200 overflow-hidden">
-              {/* Simple Header */}
-              <div className="h-32 bg-gradient-to-r from-amber-500 to-amber-600 flex items-center justify-center">
-                <div className="text-center text-white">
-                  <BookOpen className="w-12 h-12 mx-auto mb-2 opacity-90" />
-                  <h1 className="text-xl font-bold">{course.category}</h1>
+              <div className="relative h-56 sm:h-72 bg-stone-900 overflow-hidden">
+                <img
+                  src={getCourseImage(course)}
+                  alt={course.title}
+                  className="w-full h-full object-cover"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-stone-950/90 via-stone-900/40 to-stone-900/20"></div>
+
+                {/* Badges on Hero Image */}
+                <div className="absolute top-4 left-4 z-10 flex items-center gap-2">
+                  <span className="bg-amber-600 text-white text-xs font-semibold px-3 py-1.5 rounded-lg shadow font-['Open_Sans',sans-serif]">
+                    {course.category}
+                  </span>
+                  {course.featured && (
+                    <span className="bg-stone-900/80 backdrop-blur-md border border-amber-400/40 text-amber-300 text-xs font-medium px-2.5 py-1.5 rounded-lg flex items-center gap-1.5 font-['Open_Sans',sans-serif]">
+                      <span className="w-1.5 h-1.5 rounded-full bg-amber-400 animate-pulse"></span>
+                      Featured Course
+                    </span>
+                  )}
+                </div>
+
+                <div className="absolute top-4 right-4 z-10 flex items-center bg-stone-950/75 backdrop-blur-md border border-white/20 px-3 py-1.5 rounded-lg text-white font-['Open_Sans',sans-serif]">
+                  <Star className="w-4 h-4 text-amber-400 fill-amber-400 mr-1.5" />
+                  <span className="text-sm font-bold">{averageRating}</span>
+                  <span className="text-xs text-stone-300 ml-1.5">({courseReviews.length} reviews)</span>
+                </div>
+
+                <div className="absolute bottom-5 left-6 right-6 z-10">
+                  <span className="text-amber-300 text-xs uppercase tracking-wider font-semibold font-['Open_Sans',sans-serif]">
+                    Professional Law School Preparation
+                  </span>
+                  <h1 className="text-2xl sm:text-3xl font-bold text-white font-['Georgia',serif] mt-1">
+                    {course.title}
+                  </h1>
                 </div>
               </div>
 
               <div className="p-8">
                 <div className="flex items-start justify-between mb-6">
                   <div className="flex-1">
-                    <h1 className="text-3xl font-bold text-stone-900 mb-2">{course.title}</h1>
-                    <p className="text-lg text-stone-600">{course.subtitle}</p>
-                  </div>
-
-                  <div className="flex items-center bg-amber-50 px-3 py-2 rounded-full">
-                    <Star className="w-4 h-4 text-amber-500 fill-current mr-1" />
-                    <span className="font-semibold text-stone-900">{averageRating}</span>
+                    <p className="text-lg text-stone-700 font-medium font-['Open_Sans',sans-serif]">{course.subtitle}</p>
                   </div>
                 </div>
 

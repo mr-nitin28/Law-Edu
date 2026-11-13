@@ -9,10 +9,21 @@ const AppContextProvider = (props) => {
   const currencySymbol = "₹";
 
   const [instructors, setInstructors] = useState([]);
-  const [token, setToken] = useState(localStorage.getItem("token") || "");
+  const [token, setToken] = useState(() => {
+    try {
+      return localStorage.getItem("token") || "";
+    } catch (e) {
+      return "";
+    }
+  });
   const [userData, setUserData] = useState(() => {
-    const stored = localStorage.getItem('userData');
-    return stored ? JSON.parse(stored) : null;
+    try {
+      const stored = localStorage.getItem('userData');
+      return stored ? JSON.parse(stored) : null;
+    } catch (e) {
+      console.error('Error reading userData from localStorage:', e);
+      return null;
+    }
   });
   const [isLoading, setIsLoading] = useState(false);
 

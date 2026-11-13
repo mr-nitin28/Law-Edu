@@ -1,21 +1,17 @@
-import React, { useState, useContext, useEffect } from 'react'
+import { useState, useEffect } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { 
   BookOpen, 
   Star, 
   ArrowRight,
-  Award,
-  CheckCircle,
-  TrendingUp,
-  Loader
+  Award
 } from 'lucide-react'
-import { AppContext } from '../context/AppContext'
 import { toast } from 'react-toastify'
 import coursesDataJson from '../data/coursesData.json'
+import { getCourseImage } from '../assets/assets'
 
 const TopCourses = () => {
   const navigate = useNavigate()
-  const { token, userData, backendUrl } = useContext(AppContext)
   const [hoveredCourse, setHoveredCourse] = useState(null)
   const [courses, setCourses] = useState([])
   const [loading, setLoading] = useState(true)
@@ -78,7 +74,7 @@ const TopCourses = () => {
   }
 
   return (
-    <section className="py-12 bg-to-br from-stone-50 via-amber-50/30 to-stone-100 font-['Georgia','Times_New_Roman',serif]">
+    <section className="w-full py-16 sm:py-20 bg-gradient-to-br from-stone-50 via-amber-50/30 to-stone-100 font-['Georgia','Times_New_Roman',serif]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Section Header */}
@@ -121,30 +117,45 @@ const TopCourses = () => {
               onMouseEnter={() => setHoveredCourse(course.id)}
               onMouseLeave={() => setHoveredCourse(null)}
             >
-              {/* Featured Badge */}
-              {course.featured && (
-                <div className="absolute top-4 left-4 z-10 bg-gradient-to-r from-amber-500 to-amber-600 text-white px-3 py-1.5 rounded-xl text-xs font-semibold font-['Open_Sans',sans-serif] shadow-lg">
-                  <div className="flex items-center">
-                    <div className="w-1.5 h-1.5 bg-white rounded-full mr-2"></div>
-                    Featured
-                  </div>
-                </div>
-              )}
+              {/* Course Header with High-Quality Photography */}
+              <div className="relative h-44 sm:h-52 overflow-hidden bg-stone-900 group">
+                <img
+                  src={getCourseImage(course)}
+                  alt={course.title}
+                  className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700 ease-out"
+                  loading="lazy"
+                />
+                {/* Visual Depth Gradient Overlays */}
+                <div className="absolute inset-0 bg-gradient-to-t from-stone-950/90 via-stone-900/35 to-stone-900/10 pointer-events-none"></div>
 
-              {/* Course Header - Increased Size */}
-              <div className="relative h-28 sm:h-32 bg-gradient-to-br from-amber-500 to-amber-600 flex items-center justify-center">
-                <div className="text-center text-white">
-                  <div className="w-10 h-10 sm:w-12 sm:h-12 mx-auto mb-2 bg-white/20 rounded-xl flex items-center justify-center">
-                    <div className="w-5 h-5 sm:w-6 sm:h-6 bg-white rounded"></div>
-                  </div>
-                  <h3 className="text-lg sm:text-xl font-bold font-['Georgia',serif]">{course.category}</h3>
-                  <p className="text-amber-100 text-sm font-['Open_Sans',sans-serif]">Professional Preparation</p>
+                {/* Category & Status Badges */}
+                <div className="absolute top-3.5 left-3.5 z-10 flex items-center gap-2">
+                  <span className="bg-amber-600/90 backdrop-blur-md text-white text-xs font-semibold px-3 py-1 rounded-lg shadow-sm font-['Open_Sans',sans-serif]">
+                    {course.category}
+                  </span>
+                  {course.featured && (
+                    <span className="bg-stone-900/85 backdrop-blur-md border border-amber-400/40 text-amber-300 text-xs font-medium px-2.5 py-1 rounded-lg flex items-center gap-1.5 font-['Open_Sans',sans-serif]">
+                      <span className="w-1.5 h-1.5 rounded-full bg-amber-400 animate-pulse"></span>
+                      Featured
+                    </span>
+                  )}
                 </div>
-                
+
                 {/* Rating Badge */}
-                <div className="absolute top-4 right-4 flex items-center bg-white/20 backdrop-blur-sm px-3 py-1.5 rounded-xl">
-                  <div className="w-3 h-3 bg-yellow-300 rounded-full mr-2"></div>
-                  <span className="text-xs font-semibold text-white font-['Open_Sans',sans-serif]">{course.rating}</span>
+                <div className="absolute top-3.5 right-3.5 z-10 flex items-center bg-stone-950/75 backdrop-blur-md border border-white/15 px-2.5 py-1 rounded-lg shadow">
+                  <Star className="w-3.5 h-3.5 text-amber-400 fill-amber-400 mr-1" />
+                  <span className="text-xs font-bold text-white font-['Open_Sans',sans-serif]">{course.rating}</span>
+                </div>
+
+                {/* Bottom title preview on image */}
+                <div className="absolute bottom-3 left-4 right-4 z-10 flex items-center justify-between text-white/90">
+                  <span className="text-xs font-medium text-amber-200/95 font-['Open_Sans',sans-serif] flex items-center gap-1.5">
+                    <Award className="w-3.5 h-3.5 text-amber-400" />
+                    Top Law School Target
+                  </span>
+                  <span className="text-xs text-stone-300 font-['Open_Sans',sans-serif] bg-black/40 px-2 py-0.5 rounded">
+                    {course.duration}
+                  </span>
                 </div>
               </div>
 
@@ -215,30 +226,13 @@ const TopCourses = () => {
               onClick={() => navigate('/courses')}
               className="inline-flex items-center px-6 py-3 sm:px-8 sm:py-4 bg-gradient-to-r from-amber-600 to-amber-700 text-white font-semibold hover:from-amber-700 hover:to-amber-800 transform hover:scale-[1.02] transition-all duration-300 shadow-lg hover:shadow-xl text-sm sm:text-base rounded-xl font-['Open_Sans',sans-serif]"
             >
-              <div className="w-4 h-4 sm:w-5 sm:h-5 mr-2 bg-white/20 rounded"></div>
+              <BookOpen className="w-4 h-4 sm:w-5 sm:h-5 mr-2" />
               Explore All Courses
               <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5 ml-2" />
             </button>
           </div>
         </div>
       </div>
-
-      {/* CSS for line clamping */}
-      <style jsx>{`
-        .line-clamp-1 {
-          display: -webkit-box;
-          -webkit-line-clamp: 1;
-          -webkit-box-orient: vertical;
-          overflow: hidden;
-        }
-        
-        .line-clamp-2 {
-          display: -webkit-box;
-          -webkit-line-clamp: 2;
-          -webkit-box-orient: vertical;
-          overflow: hidden;
-        }
-      `}</style>
     </section>
   )
 }

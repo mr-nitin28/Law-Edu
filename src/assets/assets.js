@@ -27,16 +27,19 @@ import law8 from './law8.png'
 import law9 from './law9.png'
 import law10 from './law10.png'
 
-
+// Course Images
+import lsat_course from './courses/lsat_course.jpg'
+import lsat_intensive from './courses/lsat_intensive.jpg'
+import lnat_course from './courses/lnat_course.jpg'
+import lnat_essay from './courses/lnat_essay.jpg'
+import law_school_package from './courses/law_school_package.jpg'
+import legal_writing from './courses/legal_writing.jpg'
 
 // Law Practice Specialty Icons
 import Corporate_law from './Corporate_law.svg'
 import Criminal_law from './Criminal_law.svg'
 import Family_law from './Family_law.svg'
 import Intellectual_property from './Intellectual_property.svg'
-
-
-
 
 export const assets = {
     appointment_img,
@@ -55,7 +58,109 @@ export const assets = {
     dropdown_icon,
     upload_icon,
     stripe_logo,
-    razorpay_logo
+    razorpay_logo,
+    law1,
+    law2,
+    law3,
+    law4,
+    law5,
+    law6,
+    law7,
+    law8,
+    law9,
+    law10,
+    lsat_course,
+    lsat_intensive,
+    lnat_course,
+    lnat_essay,
+    law_school_package,
+    legal_writing
+}
+
+// Course Images Dictionary
+export const courseImages = {
+  'lsat-prep-comprehensive': lsat_course,
+  'lsat-prep-intensive': lsat_intensive,
+  'lnat-prep-comprehensive': lnat_course,
+  'lnat-essay-mastery': lnat_essay,
+  'law-school-prep': law_school_package,
+  'legal-writing-foundation': legal_writing,
+  'lsat_course.jpg': lsat_course,
+  'lsat_intensive.jpg': lsat_intensive,
+  'lnat_course.jpg': lnat_course,
+  'lnat_essay.jpg': lnat_essay,
+  'law_school_package.jpg': law_school_package,
+  'legal_writing.jpg': legal_writing
+}
+
+// Fallback high-res legal imagery URLs
+const fallbackCourseUrls = {
+  'LSAT': 'https://images.unsplash.com/photo-1589829545856-d10d557cf95f?auto=format&fit=crop&w=1200&q=80',
+  'LNAT': 'https://images.unsplash.com/photo-1541339907198-e08756dedf3f?auto=format&fit=crop&w=1200&q=80',
+  'DEFAULT': 'https://images.unsplash.com/photo-1505664194779-8beaceb93744?auto=format&fit=crop&w=1200&q=80'
+}
+
+export const getCourseImage = (courseOrId) => {
+  if (!courseOrId) return lsat_course;
+  if (typeof courseOrId === 'string') {
+    return courseImages[courseOrId] || lsat_course;
+  }
+  if (courseOrId.id && courseImages[courseOrId.id]) return courseImages[courseOrId.id];
+  if (courseOrId.image && courseImages[courseOrId.image]) return courseImages[courseOrId.image];
+  if (courseOrId.category === 'LNAT') return lnat_course;
+  if (courseOrId.category === 'LSAT') return lsat_course;
+  return lsat_course;
+}
+
+// Instructor Images Dictionary
+export const instructorImages = {
+  'inst-001': law2,
+  'inst-002': law1,
+  'inst-003': law3,
+  'inst-004': law4,
+  'inst-005': law5,
+  'inst-006': law6,
+  'inst-007': law9,
+  'inst-008': law7,
+  'inst-009': law5,
+  'inst-010': law10,
+  '1': law2,
+  '2': law3,
+  '3': law4,
+  '4': law5,
+  'law1': law1,
+  'law2': law2,
+  'law3': law3,
+  'law4': law4,
+  'law5': law5,
+  'law6': law6,
+  'law7': law7,
+  'law8': law8,
+  'law9': law9,
+  'law10': law10,
+  'instructor_emily.jpg': law2,
+  'instructor_michael.jpg': law1,
+  'instructor_sarah.jpg': law3,
+  'instructor_james.jpg': law4,
+  'instructor_olivia.jpg': law5,
+  'instructor_david.jpg': law6,
+  'instructor_jennifer.jpg': law9,
+  'instructor_robert.jpg': law7,
+  'instructor_amelia.jpg': law5,
+  'instructor_marcus.jpg': law10
+}
+
+export const getInstructorImage = (instructor) => {
+  if (!instructor) return law1;
+  if (typeof instructor === 'string') {
+    return instructorImages[instructor] || law1;
+  }
+  if (instructor.image) return instructor.image;
+  if (instructor.profileImage) return instructor.profileImage;
+  if (instructor.id && instructorImages[instructor.id]) return instructorImages[instructor.id];
+  if (instructor._id && instructorImages[instructor._id]) return instructorImages[instructor._id];
+  if (instructor.photo && instructorImages[instructor.photo]) return instructorImages[instructor.photo];
+  return law1;
 }
 
 // Law Practice Specialties Data
